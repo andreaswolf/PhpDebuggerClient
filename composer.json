@@ -1,0 +1,27 @@
+{
+	"name": "andreaswolf/php-debugger-client",
+	"description": "A client implementation for the DBGp protocol used for remote debugging by e.g. Xdebug.",
+	"license": "BSD-3-Clause",
+	"require": {
+		"php": ">=5.3.3",
+		"symfony/console": "*",
+		"symfony/event-dispatcher": "*",
+		"psr/log": "*",
+		"monolog/monolog": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"authors": [
+		{
+			"name": "Andreas Wolf",
+			"email": "aw@foundata.net",
+			"role": "Lead"
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"AndreasWolf\\DebuggerClient": "Classes/"
+		}
+	}
+}
