@@ -1,0 +1,7 @@
+/Build/Reports/
+/vendor/
+/composer.lock
+*~
+*.bak
+*.orig
+.idea/
