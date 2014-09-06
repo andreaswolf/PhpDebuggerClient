@@ -1,5 +1,8 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Core;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
 
 /**
  * Bootstrap for the Debugger library.
@@ -8,7 +11,17 @@ namespace AndreasWolf\DebuggerClient\Core;
  */
 class Bootstrap {
 
+	/**
+	 * @var self
+	 */
 	protected static $instance;
+
+	/**
+	 * The event dispatcher instance
+	 *
+	 * @var EventDispatcherInterface
+	 */
+	protected $eventDispatcher;
 
 	public static function getInstance() {
 		if (!self::$instance) {
@@ -21,8 +34,16 @@ class Bootstrap {
 	protected function __construct() {
 	}
 
+	/**
+	 * @return \Symfony\Component\EventDispatcher\EventDispatcherInterface
+	 */
+	public function getEventDispatcher() {
+		return $this->eventDispatcher;
+	}
+
 	public function run() {
 		$this->setupAutoloader();
+		$this->setupEventDispatcher();
 	}
 
 	public function setupAutoloader() {
@@ -36,6 +57,10 @@ class Bootstrap {
 		}
 
 		require COMPOSER_AUTOLOADER_FILE;
+	}
+
+	protected function setupEventDispatcher() {
+		$this->eventDispatcher = new EventDispatcher();
 	}
 
 }

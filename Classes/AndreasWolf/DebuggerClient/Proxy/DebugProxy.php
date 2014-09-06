@@ -1,5 +1,11 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Proxy;
+use AndreasWolf\DebuggerClient\Core\Bootstrap;
+use AndreasWolf\DebuggerClient\Core\DebugSessionHandler;
+use AndreasWolf\DebuggerClient\Network\StreamWatcher;
+use AndreasWolf\DebuggerClient\Streams\ConnectionListener;
+use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
+
 
 /**
  * Proxy for debugger connections. This will sit and listen for incoming debugger connections,
@@ -75,7 +81,8 @@ class DebugProxy {
 	 */
 	public function run() {
 		$this->setUpListenerStream();
-		$emptyArray = array();
+		$streamWatcher = new StreamWatcher();
+		$debugSessionHandler = new DebugSessionHandler();
 
 		while (true) {
 			$streamsToWatch = array(
@@ -90,7 +97,8 @@ class DebugProxy {
 			}
 
 			$this->debug("Watching streams for data");
-			if (stream_select($streamsToWatch, $emptyArray, $emptyArray, NULL)) {
+			$streamWatcher->watchAndNotify($streamsToWatch);
+			/*if (stream_select($streamsToWatch, $emptyArray, $emptyArray, NULL)) {
 				if (in_array($this->debuggerListenStream, $streamsToWatch)) {
 					$this->debug("Handling incoming debugger connection");
 					$this->handleIncomingDebuggerConnection();
@@ -103,7 +111,7 @@ class DebugProxy {
 					$this->debug("Handling incoming debugger data");
 					$this->handleIncomingDebuggerData();
 				}
-			}
+			}*/
 		}
 	}
 
@@ -254,9 +262,10 @@ class DebugProxy {
 	 * Creates the debugger listener stream.
 	 */
 	protected function setUpListenerStream() {
-		$this->debuggerListenStream = stream_socket_server(
+		$this->debuggerListenStream = new StreamWrapper(stream_socket_server(
 			sprintf($this->streamUriTemplate, $this->debuggerListenAddress, $this->debuggerPort), $errno, $errstr
-		);
+		));
+		$this->debuggerListenStream->setDataHandler(new ConnectionListener($this->debuggerListenStream));
 
 		$this->debug("Set up streams");
 	}
