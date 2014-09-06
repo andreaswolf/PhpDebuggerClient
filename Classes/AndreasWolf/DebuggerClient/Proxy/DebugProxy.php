@@ -62,6 +62,13 @@ class DebugProxy {
 	 */
 	protected $streamUriTemplate = 'tcp://%s:%s';
 
+	/**
+	 * The listeners attached to this proxy.
+	 *
+	 * @var ProxyListener[]
+	 */
+	protected $listeners = array();
+
 
 	/**
 	 * Runs the debugging session
@@ -169,6 +176,7 @@ class DebugProxy {
 	 */
 	protected function handleIncomingIdeData() {
 		$data = $this->readDataFromStream($this->ideStream);
+		$this->notifyIdeListeners($data);
 		$this->debug("[IDE] " . $data . "");
 		$this->writeDataToStream($data, $this->debuggerDataStream);
 	}
@@ -187,8 +195,39 @@ class DebugProxy {
 			$this->destroyStream($this->ideStream);
 			return;
 		}
+		$this->notifyDebuggerListeners($data);
 		$this->debug("[DBG] (" . strlen($data) . ") " . $data);
 		$this->writeDataToStream($data, $this->ideStream);
+	}
+
+	/**
+	 * @param ProxyListener $listener
+	 * @return void
+	 */
+	public function attachListener(ProxyListener $listener) {
+		$this->listeners[] = $listener;
+	}
+
+	/**
+	 * Notifies the listeners about new data that has arrived from the IDE.
+	 *
+	 * @param string $data
+	 */
+	protected function notifyIdeListeners($data) {
+		foreach ($this->listeners as $listener) {
+			$listener->receivedClientData($data);
+		}
+	}
+
+	/**
+	 * Notifies the listeners about new data that has arrived from the debugger.
+	 *
+	 * @param string $data
+	 */
+	protected function notifyDebuggerListeners($data) {
+		foreach ($this->listeners as $listener) {
+			$listener->receivedDebuggerData($data);
+		}
 	}
 
 	/**

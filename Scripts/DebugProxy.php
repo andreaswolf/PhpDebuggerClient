@@ -9,4 +9,5 @@ require(__DIR__ . "/../Classes/AndreasWolf/DebuggerClient/Core/Bootstrap.php");
 \AndreasWolf\DebuggerClient\Core\Bootstrap::getInstance()->run();
 
 $application = new \AndreasWolf\DebuggerClient\Proxy\DebugProxy();
+$application->attachListener(new \AndreasWolf\DebuggerClient\Proxy\PrettyPrintingListener());
 $application->run();
