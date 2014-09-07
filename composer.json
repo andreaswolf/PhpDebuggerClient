@@ -22,6 +22,9 @@
 	"autoload": {
 		"psr-0": {
 			"AndreasWolf\\DebuggerClient": "Classes/"
+		},
+		"psr-4": {
+			"AndreasWolf\\DebuggerClient\\Tests\\": "Tests/"
 		}
 	}
 }

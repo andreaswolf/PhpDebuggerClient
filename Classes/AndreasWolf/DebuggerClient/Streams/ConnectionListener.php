@@ -25,11 +25,11 @@ class ConnectionListener implements StreamDataHandler {
 	/**
 	 * Handles an incoming connection by accepting it and wrapping the new stream appropriately.
 	 *
-	 * To get notified for new events, listen to the "stream.opened" event.
+	 * To get notified for new events, listen to the "stream.connection.opened" event.
 	 */
 	public function handleIncomingData() {
 		$dataStream = stream_socket_accept($this->wrapper->getStream());
-		$streamWrapper = new StreamWrapper($dataStream);
+		$streamWrapper = new DebuggerEngineStream($dataStream);
 
 		$event = new StreamEvent($streamWrapper);
 		Bootstrap::getInstance()->getEventDispatcher()->dispatch('stream.connection.opened', $event);

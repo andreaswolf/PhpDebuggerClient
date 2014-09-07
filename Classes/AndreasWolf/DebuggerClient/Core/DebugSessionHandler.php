@@ -1,7 +1,12 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Core;
 
+use AndreasWolf\DebuggerClient\Event\SessionEvent;
 use AndreasWolf\DebuggerClient\Event\StreamEvent;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
+use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
+use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
 use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -14,9 +19,25 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class DebugSessionHandler implements EventSubscriberInterface {
 
+	/**
+	 * @var DebugSession
+	 */
+	protected $currentSession;
+
+	/**
+	 * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface
+	 */
+	protected $eventDispatcher;
+
+	/**
+	 * @var DebuggerEngineMessageParser
+	 */
+	protected $messageParser;
+
 	public function __construct() {
 		// TODO find a better way to do this…
-		Bootstrap::getInstance()->getEventDispatcher()->addSubscriber($this);
+		$this->eventDispatcher = Bootstrap::getInstance()->getEventDispatcher();
+		$this->eventDispatcher->addSubscriber($this);
 	}
 
 	/**
@@ -24,7 +45,28 @@ class DebugSessionHandler implements EventSubscriberInterface {
 	 * @throws \RuntimeException If there is an existing session
 	 */
 	public function newConnectionEvent(StreamEvent $e) {
+		if ($this->currentSession !== NULL) {
+			throw new \RuntimeException('Only one session supported currently :-(');
+		}
+		$this->createDebugSession($e->getStreamWrapper());
 		echo "Created new session\n";
+	}
+
+	/**
+	 * Creates a session object
+	 *
+	 * @param DebuggerEngineStream $debuggerStream
+	 */
+	protected function createDebugSession(DebuggerEngineStream $debuggerStream) {
+		// TODO make this class configurable
+		$this->currentSession = new DebugSession();
+		$debuggerStream->setSink($this->currentSession->getMessageParser());
+		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($debuggerStream));
+
+		$event = new SessionEvent($this->currentSession);
+		$this->eventDispatcher->dispatch('session.openend', $event);
+
+		$this->currentSession->run();
 	}
 
 	/**

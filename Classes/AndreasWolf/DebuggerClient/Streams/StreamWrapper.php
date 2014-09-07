@@ -50,4 +50,20 @@ class StreamWrapper {
 		$this->dataHandler->handleIncomingData();
 	}
 
+	/**
+	 * @param string $data
+	 * @return void
+	 */
+	public function sendData($data) {
+		$bytesSent = $totalBytesSent = 0;
+		$bytesToSend = strlen($data);
+		while ($totalBytesSent < $bytesToSend) {
+			$bytesSent = fwrite($this->stream, substr($data, $totalBytesSent));
+
+			// TODO check for error: if ($bytesSent === FALSE)
+
+			$totalBytesSent += $bytesSent;
+		}
+	}
+
 }
