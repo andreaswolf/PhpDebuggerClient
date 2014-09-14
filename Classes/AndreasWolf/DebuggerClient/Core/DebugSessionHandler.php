@@ -15,6 +15,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  * Handler for debugging sessions. This reacts to a new debugger connection being opened by a debugger engine and
  * creates a new session for it. Further handling of the session is then delegated to the session object.
  *
+ * TODO probably rename this to DebugSessionFactory and move it to DebuggerProtocol
+ *
  * @author Andreas Wolf <aw@foundata.net>
  */
 class DebugSessionHandler implements EventSubscriberInterface {
@@ -50,6 +52,11 @@ class DebugSessionHandler implements EventSubscriberInterface {
 		}
 		$this->createDebugSession($e->getStreamWrapper());
 		echo "Created new session\n";
+
+		$event = new SessionEvent($this->currentSession);
+		$this->eventDispatcher->dispatch('session.opened', $event);
+
+		$this->currentSession->run();
 	}
 
 	/**
@@ -58,15 +65,14 @@ class DebugSessionHandler implements EventSubscriberInterface {
 	 * @param DebuggerEngineStream $debuggerStream
 	 */
 	protected function createDebugSession(DebuggerEngineStream $debuggerStream) {
-		// TODO make this class configurable
 		$this->currentSession = new DebugSession();
-		$debuggerStream->setSink($this->currentSession->getMessageParser());
+
+		$messageParser = new DebuggerEngineMessageParser($this->currentSession);
+		// wire the message parser to the session and the stream
+		$this->currentSession->setMessageParser($messageParser);
+		$debuggerStream->setSink($messageParser);
+
 		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($debuggerStream));
-
-		$event = new SessionEvent($this->currentSession);
-		$this->eventDispatcher->dispatch('session.openend', $event);
-
-		$this->currentSession->run();
 	}
 
 	/**

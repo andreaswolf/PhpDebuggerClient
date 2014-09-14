@@ -60,7 +60,10 @@ class DebugSession {
 
 
 	public function __construct() {
-		$this->messageParser = new DebuggerEngineMessageParser($this);
+	}
+
+	public function setMessageParser(DebuggerEngineMessageParser $messageParser) {
+		$this->messageParser = $messageParser;
 	}
 
 	public function setCommandProcessor(DebugSessionCommandProcessor $processor) {
