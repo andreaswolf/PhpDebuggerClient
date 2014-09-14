@@ -8,11 +8,12 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 
 /**
- * Parser for debugger engine messages. Receives the data from the
+ * The connecting piece between the stream and the debugging session. Receives data from a stream and
+ * hands the parsed data to the session.
  *
- * @author Andreas Wolf <FIXME>
+ * @author Andreas Wolf <aw@foundata.net>
  */
-class DebuggerEngineMessageParser implements StreamDataSink, EventSubscriberInterface {
+class DebuggerEngineMessageParser implements StreamDataSink {
 
 	/**
 	 * @var DebugSession
@@ -27,8 +28,6 @@ class DebuggerEngineMessageParser implements StreamDataSink, EventSubscriberInte
 	public function __construct(DebugSession $session) {
 		$this->session = $session;
 		$this->identifier = uniqid();
-
-		Bootstrap::getInstance()->getEventDispatcher()->addSubscriber($this);
 	}
 
 	/**
@@ -55,25 +54,6 @@ class DebuggerEngineMessageParser implements StreamDataSink, EventSubscriberInte
 		} elseif ($xmlElement->getName() == 'response') {
 			// TODO implement
 		}
-	}
-
-	/**
-	 * @param StreamDataEvent $e
-	 */
-	public function receivedDataEvent(StreamDataEvent $e) {
-		$this->processMessage($e->getData());
-	}
-
-	/**
-	 * Returns an array of event names this subscriber wants to listen to.
-	 *
-	 * @return array The event names to listen to
-	 * @api
-	 */
-	public static function getSubscribedEvents() {
-		return array(
-			'stream.data.received' => 'receivedDataEvent'
-		);
 	}
 
 }
