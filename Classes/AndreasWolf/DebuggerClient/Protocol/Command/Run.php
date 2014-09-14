@@ -1,6 +1,7 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Protocol\Command;
-use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerBaseCommand;
+use AndreasWolf\DebuggerClient\Protocol\Response\EngineStatusResponse;
 
 
 /**
@@ -8,7 +9,7 @@ use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class Run implements DebuggerCommand {
+class Run extends DebuggerBaseCommand {
 
 	public function getNameForProtocol() {
 		return 'run';
@@ -16,6 +17,10 @@ class Run implements DebuggerCommand {
 
 	public function getArgumentsAsString() {
 		return '';
+	}
+
+	public function processResponse(\SimpleXMLElement $responseXmlNode) {
+		$this->response = new EngineStatusResponse($responseXmlNode);
 	}
 
 }

@@ -17,14 +17,13 @@ class DebugSessionCommandProcessor {
 	protected $stream;
 
 	/**
-	 * A list of commands that was already sent to the server
-	 *
-	 * @var array
+	 * @var DebugSession
 	 */
-	protected $commandsSent = array();
+	protected $session;
 
-	public function __construct(DebuggerEngineStream $debuggerStream) {
+	public function __construct(DebugSession $session, DebuggerEngineStream $debuggerStream) {
 		$this->stream = $debuggerStream;
+		$this->session = $session;
 	}
 
 	/**
@@ -34,14 +33,14 @@ class DebugSessionCommandProcessor {
 	 * @return void
 	 */
 	public function send(DebuggerCommand $command) {
+		$transaction = $this->session->startTransaction($command);
+
 		$commandString = sprintf('%s -i %d %s',
-			$command->getNameForProtocol(), count($this->commandsSent), $command->getArgumentsAsString()
+			$command->getNameForProtocol(), $transaction->getId(), $command->getArgumentsAsString()
 		);
 		// having a trailing space at the end leads to a parse error in Xdebug
 		$commandString = trim($commandString) . "\0";
 		$this->stream->sendData($commandString);
-
-		$this->commandsSent[] = $command;
 	}
 
 }

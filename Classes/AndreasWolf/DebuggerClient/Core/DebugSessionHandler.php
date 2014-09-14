@@ -72,7 +72,7 @@ class DebugSessionHandler implements EventSubscriberInterface {
 		$this->currentSession->setMessageParser($messageParser);
 		$debuggerStream->setSink($messageParser);
 
-		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($debuggerStream));
+		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($this->currentSession, $debuggerStream));
 	}
 
 	/**

@@ -16,11 +16,12 @@ use AndreasWolf\DebuggerClient\Tests\Functional\FunctionalTestCase;
 class DebugSessionInitializationTest extends FunctionalTestCase {
 
 	/**
+	 * @param DebugSession $session
 	 * @return DebugSessionCommandProcessor
 	 */
-	protected function getMockedCommandProcessor() {
+	protected function getMockedCommandProcessor(DebugSession $session) {
 		$outStream = fopen('php://memory', 'w');
-		return new DebugSessionCommandProcessor(new DebuggerEngineStream($outStream));
+		return new DebugSessionCommandProcessor($session, new DebuggerEngineStream($outStream));
 	}
 
 	/**
@@ -28,7 +29,7 @@ class DebugSessionInitializationTest extends FunctionalTestCase {
 	 */
 	public function sessionIsInitializedAfterInitialPacketWasReceived() {
 		$session = new DebugSession();
-		$session->setCommandProcessor($this->getMockedCommandProcessor());
+		$session->setCommandProcessor($this->getMockedCommandProcessor($session));
 		$session->getMessageParser()->processMessage('<init appid="myApp" idekey="myIde" fileuri="file:///some/file" />');
 
 		$this->assertTrue($session->isInitialized());

@@ -42,11 +42,9 @@ class DebugSession {
 	protected $transactionCounter = 0;
 
 	/**
-	 * The commands that were sent to the server
-	 *
-	 * @var array
+	 * @var Transaction[]
 	 */
-	protected $commandsSent = array();
+	protected $transactions = array();
 
 	/**
 	 * @var DebuggerEngineMessageParser
@@ -101,8 +99,6 @@ class DebugSession {
 	}
 
 	/**
-	 * Sends the given command to the debugger engine.
-	 *
 	 * @param DebuggerCommand $command
 	 */
 	public function sendCommand(DebuggerCommand $command) {
@@ -110,10 +106,31 @@ class DebugSession {
 	}
 
 	/**
+	 * @param DebuggerCommand $command
+	 * @return Transaction
+	 */
+	public function startTransaction(DebuggerCommand $command) {
+		$transactionId = count($this->transactions);
+		$transaction = new Transaction($this, $transactionId, $command);
+
+		$this->transactions[$transactionId] = $transaction;
+
+		return $transaction;
+	}
+
+	/**
+	 * @param int $transactionId
+	 * @param \SimpleXMLElement $response
+	 */
+	public function finishTransaction($transactionId, \SimpleXMLElement $response) {
+		$this->transactions[$transactionId]->finish($response);
+	}
+
+	/**
 	 * Runs this session initially or continues after hitting a breakpoint.
 	 */
 	public function run() {
-		$command = new Command\Run();
+		$command = new Command\Run($this);
 		$this->sendCommand($command);
 	}
 

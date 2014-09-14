@@ -48,11 +48,12 @@ class DebuggerEngineMessageParser implements StreamDataSink {
 			throw new \InvalidArgumentException('Could not decode message contents: ' . $receivedData);
 		}
 
+		$attributes = $xmlElement->attributes();
 		if ($xmlElement->getName() == 'init') {
-			$attributes = $xmlElement->attributes();
 			$this->session->initialize($attributes['idekey'], $attributes['appid'], $attributes['fileuri']);
 		} elseif ($xmlElement->getName() == 'response') {
-			// TODO implement
+			$transactionId = $attributes['transaction_id'];
+			$this->session->finishTransaction($transactionId, $xmlElement);
 		}
 	}
 
