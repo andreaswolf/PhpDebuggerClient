@@ -11,6 +11,32 @@ use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
 class StreamWatcher {
 
 	/**
+	 * @var StreamWrapper[]
+	 */
+	protected $streams;
+
+	public function attachStream(StreamWrapper $stream) {
+		$this->streams[] = $stream;
+	}
+
+	/**
+	 * @param StreamWrapper $stream
+	 */
+	public function detachStream(StreamWrapper $stream) {
+		// TODO implement
+	}
+
+	public function watchAndNotifyActiveStreams() {
+		$activeStreams = array();
+		foreach ($this->streams as $stream) {
+			if ($stream->isActive()) {
+				$activeStreams[] = $stream;
+			}
+		}
+		$this->watchAndNotify($activeStreams);
+	}
+
+	/**
 	 * Watches the given streams for incoming data and triggers the corresponding handler (defined
 	 * in the stream wrapper) when data arrives
 	 *

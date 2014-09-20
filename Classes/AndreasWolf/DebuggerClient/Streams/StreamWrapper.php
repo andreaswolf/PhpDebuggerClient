@@ -66,4 +66,13 @@ class StreamWrapper {
 		}
 	}
 
+	/**
+	 * Checks if this stream is active (i.e. does not have reached its end or was closed)
+	 *
+	 * @return bool
+	 */
+	public function isActive() {
+		return !feof($this->stream);
+	}
+
 }
