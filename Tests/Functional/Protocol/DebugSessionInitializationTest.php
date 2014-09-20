@@ -1,6 +1,7 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Tests\Functional\Protocol;
 
+use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
 use AndreasWolf\DebuggerClient\Protocol\DebugSession;
 use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
 use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
@@ -29,8 +30,9 @@ class DebugSessionInitializationTest extends FunctionalTestCase {
 	 */
 	public function sessionIsInitializedAfterInitialPacketWasReceived() {
 		$session = new DebugSession();
+		$messageParser = new DebuggerEngineMessageParser($session);
 		$session->setCommandProcessor($this->getMockedCommandProcessor($session));
-		$session->getMessageParser()->processMessage('<init appid="myApp" idekey="myIde" fileuri="file:///some/file" />');
+		$messageParser->processMessage('<init appid="myApp" idekey="myIde" fileuri="file:///some/file" />');
 
 		$this->assertTrue($session->isInitialized());
 	}
