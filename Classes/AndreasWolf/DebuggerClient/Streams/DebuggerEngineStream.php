@@ -38,6 +38,11 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 	public function handleIncomingData() {
 		$data = $this->readData();
 
+		if (strlen(trim($data)) == 0) {
+			// no data received; could be because the stream was closed
+			return;
+		}
+
 		if (is_object($this->sink)) {
 			$this->sink->processMessage($data);
 		}
