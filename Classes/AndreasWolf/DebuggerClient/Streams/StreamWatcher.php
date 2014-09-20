@@ -1,5 +1,5 @@
 <?php
-namespace AndreasWolf\DebuggerClient\Network;
+namespace AndreasWolf\DebuggerClient\Streams;
 use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
 
 
