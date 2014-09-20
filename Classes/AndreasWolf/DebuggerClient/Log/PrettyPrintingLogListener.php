@@ -1,11 +1,14 @@
 <?php
-namespace AndreasWolf\DebuggerClient\Proxy;
+namespace AndreasWolf\DebuggerClient\Log;
+use AndreasWolf\DebuggerClient\Proxy\ProxyListener;
+
+
 /**
  * Listener that pretty-prints the dumped data to the console
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class PrettyPrintingListener implements ProxyListener {
+class PrettyPrintingLogListener implements ProxyListener {
 
 	/**
 	 * @param string $data
