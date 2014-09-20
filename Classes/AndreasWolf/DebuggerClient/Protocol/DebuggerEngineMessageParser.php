@@ -52,7 +52,7 @@ class DebuggerEngineMessageParser implements StreamDataSink {
 		if ($xmlElement->getName() == 'init') {
 			$this->session->initialize($attributes['idekey'], $attributes['appid'], $attributes['fileuri']);
 		} elseif ($xmlElement->getName() == 'response') {
-			$transactionId = $attributes['transaction_id'];
+			$transactionId = (int)$attributes['transaction_id'];
 			$this->session->finishTransaction($transactionId, $xmlElement);
 		}
 	}
