@@ -22,6 +22,9 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 	 */
 	protected $sink;
 
+	/**
+	 * @param resource $stream
+	 */
 	public function __construct($stream) {
 		parent::__construct($stream);
 
@@ -50,21 +53,26 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 	protected function readData() {
 		$bytesToRead = 8192;
 		$data = '';
-		$dataLength = 0;
-		while (!feof($this->stream) || ($dataLength > 0 && strlen($data) < $dataLength)) {
+		$packetLength = $dataLength = 0;
+
+		// TODO this currently cannot cope with multiple packets received at once
+		while (!feof($this->stream) || ($packetLength > 0 && strlen($data) < $packetLength)) {
 			$data .= fread($this->stream, $bytesToRead);
 
 			// the length of this data packet is written directly at the beginning of the data, separated by \0
-			if ($dataLength === 0) {
+			if ($packetLength === 0) {
 				$dataLength = (int)substr($data, 0, strpos($data, "\0"));
-				$dataLength += 1 + strlen((string)$dataLength);
+				$packetLength = $dataLength + 1 /* the zerobyte separator */ + strlen((string)$dataLength);
+				$data = substr($data, strpos($data, "\0") + 1);
 			}
 
 			if (strlen($data) >= $dataLength) {
+				// cut off trailing zero bytes etc.
+				$data = substr($data, 0, $dataLength);
 				break;
 			}
 			// adjust receive window
-			$bytesToRead = min($bytesToRead, $dataLength - strlen($data) + 1);
+			$bytesToRead = min($bytesToRead, $packetLength - strlen($data) + 1);
 		}
 
 		return $data;
