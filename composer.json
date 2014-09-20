@@ -10,7 +10,8 @@
 		"monolog/monolog": "*"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "*"
+		"phpunit/phpunit": "*",
+		"theseer/phpdox": "*"
 	},
 	"authors": [
 		{
