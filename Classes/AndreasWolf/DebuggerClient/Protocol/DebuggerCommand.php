@@ -1,7 +1,11 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Protocol;
 
-
+/**
+ * Interface for commands sent to the debugger engine.
+ *
+ * @author Andreas Wolf <aw@foundata.net>
+ */
 interface DebuggerCommand {
 
 	const STATUS_NEW = 0;
@@ -21,8 +25,17 @@ interface DebuggerCommand {
 	 */
 	public function getStatus();
 
+	/**
+	 * Returns the name as used in the protocol, i.e. lowercased and word parts separated with underscores.
+	 * @return string
+	 */
 	public function getNameForProtocol();
 
+	/**
+	 * Returns this command’s arguments, without the transaction id.
+	 *
+	 * @return string
+	 */
 	public function getArgumentsAsString();
 
 	/**
@@ -35,6 +48,12 @@ interface DebuggerCommand {
 	 */
 	public function onSend();
 
+	/**
+	 * Processed the XML sent by the debugger engine, possibly using a callback set via `onProcessedResponse()`.
+	 *
+	 * @param \SimpleXMLElement $responseXmlNode
+	 * @return void
+	 */
 	public function processResponse(\SimpleXMLElement $responseXmlNode);
 
 	/**
