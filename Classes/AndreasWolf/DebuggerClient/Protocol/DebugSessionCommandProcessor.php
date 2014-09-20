@@ -29,6 +29,8 @@ class DebugSessionCommandProcessor {
 	/**
 	 * Send a command to the debugger engine.
 	 *
+	 * Don't call this directly, use ``DebugSession::sendCommand()`` instead.
+	 *
 	 * @param DebuggerCommand $command
 	 * @return void
 	 */

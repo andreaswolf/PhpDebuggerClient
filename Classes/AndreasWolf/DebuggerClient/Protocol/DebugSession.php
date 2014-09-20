@@ -2,6 +2,7 @@
 namespace AndreasWolf\DebuggerClient\Protocol;
 
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
+use AndreasWolf\DebuggerClient\Event\CommandEvent;
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
 use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
@@ -56,8 +57,14 @@ class DebugSession {
 	 */
 	protected $commandProcessor;
 
+	/**
+	 * @var EventDispatcherInterface
+	 */
+	protected $eventDispatcher;
+
 
 	public function __construct() {
+		$this->eventDispatcher = Bootstrap::getInstance()->getEventDispatcher();
 	}
 
 	public function setMessageParser(DebuggerEngineMessageParser $messageParser) {
@@ -93,7 +100,7 @@ class DebugSession {
 		$this->startFile = $startFile;
 		$this->initialized = TRUE;
 
-		Bootstrap::getInstance()->getEventDispatcher()->dispatch('session.initialized', new SessionEvent($this));
+		$this->eventDispatcher->dispatch('session.initialized', new SessionEvent($this));
 
 		$this->run();
 	}
@@ -103,6 +110,8 @@ class DebugSession {
 	 */
 	public function sendCommand(DebuggerCommand $command) {
 		$this->commandProcessor->send($command);
+
+		$this->eventDispatcher->dispatch('command.sent', new CommandEvent($command, $this));
 	}
 
 	/**
