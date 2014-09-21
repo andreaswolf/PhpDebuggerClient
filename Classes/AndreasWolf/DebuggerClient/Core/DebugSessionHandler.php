@@ -55,8 +55,6 @@ class DebugSessionHandler implements EventSubscriberInterface {
 
 		$event = new SessionEvent($this->currentSession);
 		$this->eventDispatcher->dispatch('session.opened', $event);
-
-		$this->currentSession->run();
 	}
 
 	/**
