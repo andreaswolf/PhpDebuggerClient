@@ -7,6 +7,7 @@ use AndreasWolf\DebuggerClient\Protocol\Breakpoint\BreakpointCollection;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
 use AndreasWolf\DebuggerClient\Protocol\DebugSession;
 use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
+use AndreasWolf\DebuggerClient\Protocol\DebugSessionShutdownHandler;
 use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
 use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -73,6 +74,9 @@ class DebugSessionHandler implements EventSubscriberInterface {
 
 		$this->currentSession->setBreakpointCollection(new BreakpointCollection($this->currentSession));
 		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($this->currentSession, $debuggerStream));
+
+		$shutdownHandler = new DebugSessionShutdownHandler($this->currentSession, $debuggerStream);
+		$this->eventDispatcher->addSubscriber($shutdownHandler);
 	}
 
 	/**

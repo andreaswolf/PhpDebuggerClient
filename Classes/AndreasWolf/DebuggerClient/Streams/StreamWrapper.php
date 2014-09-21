@@ -1,5 +1,8 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Streams;
+use AndreasWolf\DebuggerClient\Core\Bootstrap;
+use AndreasWolf\DebuggerClient\Event\StreamEvent;
+
 
 /**
  * A stream enriched with additional metadata, like a custom data handler for incoming data.
@@ -19,6 +22,11 @@ class StreamWrapper {
 	 * @var StreamDataHandler
 	 */
 	protected $dataHandler;
+
+	const STATUS_OPEN = 1;
+	const STATUS_SHUTDOWN = 2;
+
+	protected $status = self::STATUS_OPEN;
 
 	/**
 	 * @param resource $stream The stream to wrap
@@ -72,7 +80,17 @@ class StreamWrapper {
 	 * @return bool
 	 */
 	public function isActive() {
-		return !feof($this->stream);
+		return $this->status == self::STATUS_OPEN && !feof($this->stream);
+	}
+
+	/**
+	 * @return void
+	 */
+	public function shutdown() {
+		stream_socket_shutdown($this->stream, STREAM_SHUT_RDWR);
+		$this->status = self::STATUS_SHUTDOWN;
+
+		Bootstrap::getInstance()->getEventDispatcher()->dispatch('stream.shutdown', new StreamEvent($this));
 	}
 
 }
