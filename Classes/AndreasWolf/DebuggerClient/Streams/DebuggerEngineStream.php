@@ -43,6 +43,9 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 			return;
 		}
 
+		$dataEvent = new StreamDataEvent($this, $data);
+		Bootstrap::getInstance()->getEventDispatcher()->dispatch('stream.data.received', $dataEvent);
+
 		if (is_object($this->sink)) {
 			$this->sink->processMessage($data);
 		}
