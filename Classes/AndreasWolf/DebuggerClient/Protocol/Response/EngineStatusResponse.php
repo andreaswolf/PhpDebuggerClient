@@ -36,6 +36,7 @@ class EngineStatusResponse implements DebuggerCommandResult {
 	 */
 	protected $lineNumber;
 
+
 	public function __construct(\SimpleXMLElement $responseXml) {
 		$attributes = $responseXml->attributes();
 		$status = $attributes['status'];

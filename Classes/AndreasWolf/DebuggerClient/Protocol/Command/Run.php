@@ -21,7 +21,8 @@ class Run extends DebuggerBaseCommand {
 
 	public function processResponse(\SimpleXMLElement $responseXmlNode) {
 		$this->response = new EngineStatusResponse($responseXmlNode);
+
+		$this->session->setStatusFromDebuggerEngine($this->response);
 	}
 
 }
- 

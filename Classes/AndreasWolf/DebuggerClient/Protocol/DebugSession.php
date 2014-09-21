@@ -4,6 +4,7 @@ namespace AndreasWolf\DebuggerClient\Protocol;
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event\CommandEvent;
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
+use AndreasWolf\DebuggerClient\Protocol\Response\EngineStatusResponse;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 
@@ -42,6 +43,28 @@ class DebugSession {
 	 * @var Transaction[]
 	 */
 	protected $transactions = array();
+
+	const STATUS_NEW = 0;
+	// TODO this status is currently never set
+	const STATUS_INITIALIZED = 1;
+	/** The program is being executed */
+	const STATUS_RUNNING = 2;
+	/** Execution is interrupted, e.g. when a breakpoint was hit */
+	const STATUS_PAUSED = 3;
+	/** Program execution has ended; this is the point to e.g. collect statistics */
+	const STATUS_STOPPED = 4;
+	/** The session was closed, no further interaction with the debugger possible */
+	// TODO this status is currently never set
+	const STATUS_CLOSED = 5;
+
+	/**
+	 * The current status of this session; see STATUS_* constants for possible values.
+	 *
+	 * This does not reflect the debugger engine status 1:1, as
+	 *
+	 * @var int
+	 */
+	protected $status = self::STATUS_NEW;
 
 	/**
 	 * @var DebuggerEngineMessageParser
@@ -83,6 +106,42 @@ class DebugSession {
 	 */
 	public function getMessageParser() {
 		return $this->messageParser;
+	}
+
+	/**
+	 * Returns the current session status.
+	 *
+	 * @return int
+	 */
+	public function getStatus() {
+		return $this->status;
+	}
+
+	/**
+	 * Sets the status from a debugger engine response
+	 *
+	 * @param EngineStatusResponse $engineResponse
+	 */
+	public function setStatusFromDebuggerEngine(EngineStatusResponse $engineResponse) {
+		$oldStatus = $this->status;
+		switch ($engineResponse->getStatus()) {
+			case EngineStatusResponse::STATUS_RUNNING:
+				$this->status = self::STATUS_RUNNING;
+				break;
+
+			case EngineStatusResponse::STATUS_BREAK:
+				$this->status = self::STATUS_PAUSED;
+				break;
+
+			case EngineStatusResponse::STATUS_STOPPING:
+				$this->status = self::STATUS_STOPPED;
+				// TODO trigger event
+				break;
+		}
+
+		if ($oldStatus != $this->status) {
+			$this->eventDispatcher->dispatch('session.status.changed', new SessionEvent($this));
+		}
 	}
 
 	/**
@@ -142,6 +201,7 @@ class DebugSession {
 	public function run() {
 		$command = new Command\Run($this);
 		$this->sendCommand($command);
+		$this->status = self::STATUS_RUNNING;
 	}
 
 }
