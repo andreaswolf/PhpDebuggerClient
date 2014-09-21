@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<phpunit strict="true"
+		bootstrap="UnitTestBootstrap.php"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		timeoutForSmallTests="0">
+	<testsuites>
+		<testsuite name="All tests">
+			<directory>../../Tests/Unit</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="false">
+			<directory>../../Classes</directory>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="junit" target="../Reports/UnitTests.xml" logIncompleteSkipped="false"/>
+	</logging>
+</phpunit>
