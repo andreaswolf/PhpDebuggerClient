@@ -4,6 +4,7 @@ namespace AndreasWolf\DebuggerClient\Protocol;
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event\CommandEvent;
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
+use AndreasWolf\DebuggerClient\Protocol\Breakpoint\BreakpointCollection;
 use AndreasWolf\DebuggerClient\Protocol\Response\EngineStatusResponse;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -92,6 +93,11 @@ class DebugSession {
 	 */
 	protected $eventDispatcher;
 
+	/**
+	 * @var BreakpointCollection
+	 */
+	protected $breakpoints;
+
 
 	public function __construct() {
 		$this->eventDispatcher = Bootstrap::getInstance()->getEventDispatcher();
@@ -103,6 +109,21 @@ class DebugSession {
 
 	public function setCommandProcessor(DebugSessionCommandProcessor $processor) {
 		$this->commandProcessor = $processor;
+	}
+
+	/**
+	 * @param BreakpointCollection $breakpointCollection
+	 */
+	public function setBreakpointCollection(BreakpointCollection $breakpointCollection) {
+		$this->breakpoints = $breakpointCollection;
+		$this->eventDispatcher->addSubscriber($this->breakpoints);
+	}
+
+	/**
+	 * @return BreakpointCollection
+	 */
+	public function getBreakpointCollection() {
+		return $this->breakpoints;
 	}
 
 	/**

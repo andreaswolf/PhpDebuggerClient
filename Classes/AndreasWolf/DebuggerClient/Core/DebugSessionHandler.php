@@ -3,6 +3,7 @@ namespace AndreasWolf\DebuggerClient\Core;
 
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
 use AndreasWolf\DebuggerClient\Event\StreamEvent;
+use AndreasWolf\DebuggerClient\Protocol\Breakpoint\BreakpointCollection;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
 use AndreasWolf\DebuggerClient\Protocol\DebugSession;
 use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
@@ -70,6 +71,7 @@ class DebugSessionHandler implements EventSubscriberInterface {
 		$this->currentSession->setMessageParser($messageParser);
 		$debuggerStream->setSink($messageParser);
 
+		$this->currentSession->setBreakpointCollection(new BreakpointCollection($this->currentSession));
 		$this->currentSession->setCommandProcessor(new DebugSessionCommandProcessor($this->currentSession, $debuggerStream));
 	}
 
