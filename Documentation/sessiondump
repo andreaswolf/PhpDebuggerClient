@@ -1,0 +1,1222 @@
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" language="PHP" protocol_version="1.0" appid="1322" idekey="PHPSTORM">
+[DBG]   <engine version="2.2.5"><![CDATA[Xdebug]]></engine>
+[DBG]   <author><![CDATA[Derick Rethans]]></author>
+[DBG]   <url><![CDATA[http://xdebug.org]]></url>
+[DBG]   <copyright><![CDATA[Copyright (c) 2002-2014 by Derick Rethans]]></copyright>
+[DBG] </init>
+[DBG] 
+[IDE] feature_set -i 0 -n show_hidden -v 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="0" feature="show_hidden" success="1"/>
+[DBG] 
+[IDE] feature_set -i 1 -n max_depth -v 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="1" feature="max_depth" success="1"/>
+[DBG] 
+[IDE] feature_set -i 2 -n max_children -v 100
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="2" feature="max_children" success="1"/>
+[DBG] 
+[IDE] status -i 3
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="status" transaction_id="3" status="starting" reason="ok"/>
+[DBG] 
+[IDE] step_into -i 4
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="4" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="3"/>
+[DBG] </response>
+[DBG] 
+[IDE] eval -i 5 -- isset($_SERVER['PHP_IDE_CONFIG'])
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="eval" transaction_id="5">
+[DBG]   <property address="140737240842592" type="bool"><![CDATA[0]]></property>
+[DBG] </response>
+[DBG] 
+[IDE] eval -i 6 -- isset($_SERVER['SERVER_NAME'])
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="eval" transaction_id="6">
+[DBG]   <property address="140737240842592" type="bool"><![CDATA[0]]></property>
+[DBG] </response>
+[DBG] 
+[IDE] breakpoint_set -i 7 -t line -f file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php -n 30
+[IDE] stack_get -i 8
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="7" id="13220001"/>
+[DBG] 
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="8">
+[DBG]   <stack where="{main}" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="3"/>
+[DBG] </response>
+[DBG] 
+[IDE] run -i 9
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="run" transaction_id="9" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 10
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="10">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 11 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="11">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 12 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="12" context="0">
+[DBG]   <property name="$conditional" fullname="$conditional" address="140141859069000" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$conditional-&gt;subNodes" facet="protected" address="140141859069144" type="array" children="1" numchildren="4"/>
+[DBG]     <property name="attributes" fullname="$conditional-&gt;attributes" facet="protected" address="140141859064336" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$context" fullname="$context" address="140141859396960" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3" page="0" pagesize="100">
+[DBG]     <property name="class" fullname="$context-&gt;class" facet="protected" address="140141859028912" type="null"/>
+[DBG]     <property name="function" fullname="$context-&gt;function" facet="protected" address="140141859028680" type="null"/>
+[DBG]     <property name="file" fullname="$context-&gt;file" facet="protected" address="140141858916008" type="string" size="1" encoding="base64"><![CDATA[LQ==]]></property>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140141859030744" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140141859057448" type="array" children="0" numchildren="0"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140141858952144" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140141859069000" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140141859396960" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 13 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="13" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140142459773896" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140142459775016" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140142459774120" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140142459772920" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140142459773672" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140142459775240" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140142459775464" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140142459775632" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140142459775936" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140142459776120" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140142459776312" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140142459776488" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140142459776664" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140142459776840" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140142459777016" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140142459777200" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140142459777536" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140142459777728" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140142459777920" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140142459778120" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140142459778312" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140142459778488" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140142459778688" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140142459778896" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140142459779344" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140142459779528" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140142459779712" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140142459779912" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140142459780104" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140142459780296" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140142459780496" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140142459780648" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140142459780832" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140142459781080" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140142459781296" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140142459781488" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140142459781664" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140142459781840" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140142459782032" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140142459782216" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140142459782944" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140142459783184" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140142459783376" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140142459783560" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140142459783744" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140142459783928" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140142459784104" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140142459784296" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140142459784480" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140142459784656" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140142459784840" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140142459785024" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140142459785320" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140142459785496" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140142459785672" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140142459785848" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140142459786032" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140142459786216" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140142459786392" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140142459786600" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140142459786784" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140142459786976" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140142459788824" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140142459789080" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140142459789264" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140142459789448" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140142459789624" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140142459789800" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140142459789992" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140142459790176" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140142459790360" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140142459790536" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140142459792192" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140142459792592" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140142459792992" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140142459793392" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140142459793760" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140142459793912" type="float"><![CDATA[1409950250.1223]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140142459794072" type="int"><![CDATA[1409950250]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140142459774344" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140142459774744" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] run -i 14
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="run" transaction_id="14" status="stopping" reason="ok"/>
+[DBG] 
+[IDE] run -i 15
+
+
+
+
+
+
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" language="PHP" protocol_version="1.0" appid="1781" idekey="PHPSTORM">
+[DBG]   <engine version="2.2.5"><![CDATA[Xdebug]]></engine>
+[DBG]   <author><![CDATA[Derick Rethans]]></author>
+[DBG]   <url><![CDATA[http://xdebug.org]]></url>
+[DBG]   <copyright><![CDATA[Copyright (c) 2002-2014 by Derick Rethans]]></copyright>
+[DBG] </init>
+[DBG] 
+[IDE] feature_set -i 0 -n show_hidden -v 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="0" feature="show_hidden" success="1"/>
+[DBG] 
+[IDE] feature_set -i 1 -n max_depth -v 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="1" feature="max_depth" success="1"/>
+[DBG] 
+[IDE] feature_set -i 2 -n max_children -v 100
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="feature_set" transaction_id="2" feature="max_children" success="1"/>
+[DBG] 
+[IDE] status -i 3
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="status" transaction_id="3" status="starting" reason="ok"/>
+[DBG] 
+[IDE] step_into -i 4
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="4" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="3"/>
+[DBG] </response>
+[DBG] 
+[IDE] eval -i 5 -- isset($_SERVER['PHP_IDE_CONFIG'])
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="eval" transaction_id="5">
+[DBG]   <property address="140736455787952" type="bool"><![CDATA[0]]></property>
+[DBG] </response>
+[DBG] 
+[IDE] eval -i 6 -- isset($_SERVER['SERVER_NAME'])
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="eval" transaction_id="6">
+[DBG]   <property address="140736455787952" type="bool"><![CDATA[0]]></property>
+[DBG] </response>
+[DBG] 
+[IDE] breakpoint_set -i 7 -t line -f file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php -n 30stack_get -i 8
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="7" id="17810001"/>
+[DBG] 
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="8">
+[DBG]   <stack where="{main}" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="3"/>
+[DBG] </response>
+[DBG] 
+[IDE] run -i 9
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="run" transaction_id="9" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 10
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="10">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 11 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="11">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 12 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="12" context="0">
+[DBG]   <property name="$conditional" fullname="$conditional" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$conditional-&gt;subNodes" facet="protected" address="140412861394136" type="array" children="1" numchildren="4"/>
+[DBG]     <property name="attributes" fullname="$conditional-&gt;attributes" facet="protected" address="140412861389328" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$context" fullname="$context" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3" page="0" pagesize="100">
+[DBG]     <property name="class" fullname="$context-&gt;class" facet="protected" address="140412861353904" type="null"/>
+[DBG]     <property name="function" fullname="$context-&gt;function" facet="protected" address="140412861353672" type="null"/>
+[DBG]     <property name="file" fullname="$context-&gt;file" facet="protected" address="140412861241000" type="string" size="1" encoding="base64"><![CDATA[LQ==]]></property>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861355736" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140412861382440" type="array" children="0" numchildren="0"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140412861277136" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 13 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="13" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_into -i 14
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="14" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="37"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 15
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="15">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="37"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 16 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="16">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 17 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="17" context="0">
+[DBG]   <property name="$elseIf" fullname="$elseIf" type="uninitialized"/>
+[DBG]   <property name="$this" fullname="$this" address="140412861355736" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140412861382440" type="array" children="0" numchildren="0"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140412861277136" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 18 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="18" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_over -i 19
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_over" transaction_id="19" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="39"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 20
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="20">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="39"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 21 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="21">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 22 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="22" context="0">
+[DBG]   <property name="$elseIf" fullname="$elseIf" type="uninitialized"/>
+[DBG]   <property name="$this" fullname="$this" address="140412861355736" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140412861393944" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140412861277136" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 23 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="23" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_over -i 24
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_over" transaction_id="24" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="40"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 25
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="25">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="40"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 26 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="26">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 27 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="27" context="0">
+[DBG]   <property name="$elseIf" fullname="$elseIf" address="140412861389248" type="object" classname="PhpParser\Node\Stmt\ElseIf_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$elseIf-&gt;subNodes" facet="protected" address="140412861380888" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="attributes" fullname="$elseIf-&gt;attributes" facet="protected" address="140412861254256" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861355736" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140412861393944" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140412861277136" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 28 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="28" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_into -i 29
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="29" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="28"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 30
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="30">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition-&gt;__construct" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="28"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="40"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="3" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 31 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="31">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 32 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="32" context="0">
+[DBG]   <property name="$parentStatement" fullname="$parentStatement" address="140412861389248" type="object" classname="PhpParser\Node\Stmt\ElseIf_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$parentStatement-&gt;subNodes" facet="protected" address="140412861380888" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="attributes" fullname="$parentStatement-&gt;attributes" facet="protected" address="140412861254256" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861463504" type="object" classname="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition" children="1" numchildren="1" page="0" pagesize="100">
+[DBG]     <property name="condition" fullname="$this-&gt;condition" facet="protected" address="140412861463408" type="null"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 33 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="33" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_over -i 34
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_over" transaction_id="34" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="31"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 35
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="35">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition-&gt;__construct" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="31"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="40"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="3" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 36 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="36">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 37 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="37" context="0">
+[DBG]   <property name="$parentStatement" fullname="$parentStatement" address="140412861389248" type="object" classname="PhpParser\Node\Stmt\ElseIf_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$parentStatement-&gt;subNodes" facet="protected" address="140412861380888" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="attributes" fullname="$parentStatement-&gt;attributes" facet="protected" address="140412861254256" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861463504" type="object" classname="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition" children="1" numchildren="1" page="0" pagesize="100">
+[DBG]     <property name="condition" fullname="$this-&gt;condition" facet="protected" address="140412861463408" type="null"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 38 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="38" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_over -i 39
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_over" transaction_id="39" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="32"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 40
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="40">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition-&gt;__construct" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/BooleanLogic/BooleanCondition.php" lineno="32"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="40"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="3" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 41 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="41">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 42 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="42" context="0">
+[DBG]   <property name="$parentStatement" fullname="$parentStatement" address="140412861389248" type="object" classname="PhpParser\Node\Stmt\ElseIf_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$parentStatement-&gt;subNodes" facet="protected" address="140412861380888" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="attributes" fullname="$parentStatement-&gt;attributes" facet="protected" address="140412861254256" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861463504" type="object" classname="AndreasWolf\DecisionCoverage\BooleanLogic\BooleanCondition" children="1" numchildren="1" page="0" pagesize="100">
+[DBG]     <property name="condition" fullname="$this-&gt;condition" facet="protected" address="140412861463456" type="object" classname="PhpParser\Node\Expr\BinaryOp\Smaller" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 43 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="43" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] step_over -i 44
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_over" transaction_id="44" status="break" reason="ok">
+[DBG]   <xdebug:message filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="43"/>
+[DBG] </response>
+[DBG] 
+[IDE] stack_get -i 45
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="45">
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;extractConditionBlocks" level="0" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="43"/>
+[DBG]   <stack where="AndreasWolf\DecisionCoverage\Source\IfStatement-&gt;__construct" level="1" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Classes/AndreasWolf/DecisionCoverage/Source/IfStatement.php" lineno="30"/>
+[DBG]   <stack where="{main}" level="2" type="file" filename="file:///home/aw/Dev/php-decision-coverage/Scripts/DumpDecisionTable.php" lineno="13"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_names -i 46 -d 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="46">
+[DBG]   <context name="Locals" id="0"/>
+[DBG]   <context name="Superglobals" id="1"/>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 47 -d 0 -c 0
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="47" context="0">
+[DBG]   <property name="$elseIf" fullname="$elseIf" address="140412861389248" type="object" classname="PhpParser\Node\Stmt\ElseIf_" children="1" numchildren="2" page="0" pagesize="100">
+[DBG]     <property name="subNodes" fullname="$elseIf-&gt;subNodes" facet="protected" address="140412861380888" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="attributes" fullname="$elseIf-&gt;attributes" facet="protected" address="140412861254256" type="array" children="1" numchildren="2"/>
+[DBG]   </property>
+[DBG]   <property name="$this" fullname="$this" address="140412861355736" type="object" classname="AndreasWolf\DecisionCoverage\Source\IfStatement" children="1" numchildren="4" page="0" pagesize="100">
+[DBG]     <property name="conditionBlocks" fullname="$this-&gt;conditionBlocks" facet="protected" address="140412861393944" type="array" children="1" numchildren="2"/>
+[DBG]     <property name="hasElseBlock" fullname="$this-&gt;hasElseBlock" facet="protected" address="140412861277136" type="bool"><![CDATA[0]]></property>
+[DBG]     <property name="conditional" fullname="$this-&gt;conditional" facet="protected" address="140412861393992" type="object" classname="PhpParser\Node\Stmt\If_" children="1" numchildren="2"/>
+[DBG]     <property name="context" fullname="$this-&gt;context" facet="protected" address="140412861721952" type="object" classname="AndreasWolf\DecisionCoverage\Source\StatementContext" children="1" numchildren="3"/>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] context_get -i 48 -d 0 -c 1
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="48" context="1">
+[DBG]   <property name="$_COOKIE" fullname="$_COOKIE" address="140413462098888" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_ENV" fullname="$_ENV" address="140413462100008" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_FILES" fullname="$_FILES" address="140413462099112" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_GET" fullname="$_GET" address="140413462097912" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_POST" fullname="$_POST" address="140413462098664" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_REQUEST" fullname="$_REQUEST" address="140413462100232" type="array" children="0" numchildren="0" page="0" pagesize="100"/>
+[DBG]   <property name="$_SERVER" fullname="$_SERVER" address="140413462100456" type="array" children="1" numchildren="74" page="0" pagesize="100">
+[DBG]     <property name="QT_GRAPHICSSYSTEM_CHECKED" fullname="$_SERVER['QT_GRAPHICSSYSTEM_CHECKED']" address="140413462100624" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SSH_AUTH_SOCK" fullname="$_SERVER['SSH_AUTH_SOCK']" address="140413462100928" type="string" size="32" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9zc2g=]]></property>
+[DBG]     <property name="KDE_IS_PRELINKED" fullname="$_SERVER['KDE_IS_PRELINKED']" address="140413462101112" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LANG" fullname="$_SERVER['LANG']" address="140413462101304" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="DISPLAY" fullname="$_SERVER['DISPLAY']" address="140413462101480" type="string" size="2" encoding="base64"><![CDATA[OjA=]]></property>
+[DBG]     <property name="SHLVL" fullname="$_SERVER['SHLVL']" address="140413462101656" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="LOGNAME" fullname="$_SERVER['LOGNAME']" address="140413462101832" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="XDG_VTNR" fullname="$_SERVER['XDG_VTNR']" address="140413462102008" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="UNISONLOCALHOSTNAME" fullname="$_SERVER['UNISONLOCALHOSTNAME']" address="140413462102192" type="string" size="13" encoding="base64"><![CDATA[YXctdHAua2Eud29sZg==]]></property>
+[DBG]     <property name="GNOME_KEYRING_PID" fullname="$_SERVER['GNOME_KEYRING_PID']" address="140413462102528" type="string" size="5" encoding="base64"><![CDATA[MTY4MDc=]]></property>
+[DBG]     <property name="IMSETTINGS_MODULE" fullname="$_SERVER['IMSETTINGS_MODULE']" address="140413462102720" type="string" size="4" encoding="base64"><![CDATA[bm9uZQ==]]></property>
+[DBG]     <property name="CVS_RSH" fullname="$_SERVER['CVS_RSH']" address="140413462102912" type="string" size="3" encoding="base64"><![CDATA[c3No]]></property>
+[DBG]     <property name="XAUTHORITY" fullname="$_SERVER['XAUTHORITY']" address="140413462103112" type="string" size="36" encoding="base64"><![CDATA[L3J1bi9nZG0vYXV0aC1mb3ItYXctTndsWk1nL2RhdGFiYXNl]]></property>
+[DBG]     <property name="QTDIR" fullname="$_SERVER['QTDIR']" address="140413462103304" type="string" size="17" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjM=]]></property>
+[DBG]     <property name="IMSETTINGS_INTEGRATE_DESKTOP" fullname="$_SERVER['IMSETTINGS_INTEGRATE_DESKTOP']" address="140413462103480" type="string" size="3" encoding="base64"><![CDATA[eWVz]]></property>
+[DBG]     <property name="XDG_SESSION_ID" fullname="$_SERVER['XDG_SESSION_ID']" address="140413462103680" type="string" size="3" encoding="base64"><![CDATA[NTYz]]></property>
+[DBG]     <property name="PWD" fullname="$_SERVER['PWD']" address="140413462103888" type="string" size="34" encoding="base64"><![CDATA[L2hvbWUvYXcvRGV2L3BocC1kZWNpc2lvbi1jb3ZlcmFnZQ==]]></property>
+[DBG]     <property name="COLORTERM" fullname="$_SERVER['COLORTERM']" address="140413462104336" type="string" size="14" encoding="base64"><![CDATA[Z25vbWUtdGVybWluYWw=]]></property>
+[DBG]     <property name="DESKTOP_SESSION" fullname="$_SERVER['DESKTOP_SESSION']" address="140413462104520" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GDMSESSION" fullname="$_SERVER['GDMSESSION']" address="140413462104704" type="string" size="5" encoding="base64"><![CDATA[Z25vbWU=]]></property>
+[DBG]     <property name="GNOME_KEYRING_CONTROL" fullname="$_SERVER['GNOME_KEYRING_CONTROL']" address="140413462104904" type="string" size="28" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdg==]]></property>
+[DBG]     <property name="USERNAME" fullname="$_SERVER['USERNAME']" address="140413462105096" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="GNOME_DESKTOP_SESSION_ID" fullname="$_SERVER['GNOME_DESKTOP_SESSION_ID']" address="140413462105288" type="string" size="18" encoding="base64"><![CDATA[dGhpcy1pcy1kZXByZWNhdGVk]]></property>
+[DBG]     <property name="WINDOWPATH" fullname="$_SERVER['WINDOWPATH']" address="140413462105488" type="string" size="1" encoding="base64"><![CDATA[MQ==]]></property>
+[DBG]     <property name="SESSION_MANAGER" fullname="$_SERVER['SESSION_MANAGER']" address="140413462105640" type="string" size="63" encoding="base64"><![CDATA[bG9jYWwvdW5peDpAL3RtcC8uSUNFLXVuaXgvMTY4MDksdW5peC91bml4Oi90bXAvLklDRS11bml4LzE2ODA5]]></property>
+[DBG]     <property name="VTE_VERSION" fullname="$_SERVER['VTE_VERSION']" address="140413462105824" type="string" size="4" encoding="base64"><![CDATA[MzQwOQ==]]></property>
+[DBG]     <property name="DBUS_SESSION_BUS_ADDRESS" fullname="$_SERVER['DBUS_SESSION_BUS_ADDRESS']" address="140413462106072" type="string" size="72" encoding="base64"><![CDATA[dW5peDphYnN0cmFjdD0vdG1wL2RidXMtTEUxT1ZVTVQzbixndWlkPTBlNTg2MjZkM2E3Mjc1OWUzZWVmMjBkMDU0MDllZjZk]]></property>
+[DBG]     <property name="LESSOPEN" fullname="$_SERVER['LESSOPEN']" address="140413462106288" type="string" size="25" encoding="base64"><![CDATA[fHwvdXNyL2Jpbi9sZXNzcGlwZS5zaCAlcw==]]></property>
+[DBG]     <property name="MAIL" fullname="$_SERVER['MAIL']" address="140413462106480" type="string" size="18" encoding="base64"><![CDATA[L3Zhci9zcG9vbC9tYWlsL2F3]]></property>
+[DBG]     <property name="_" fullname="$_SERVER['_']" address="140413462106656" type="string" size="12" encoding="base64"><![CDATA[L3Vzci9iaW4vcGhw]]></property>
+[DBG]     <property name="GJS_DEBUG_TOPICS" fullname="$_SERVER['GJS_DEBUG_TOPICS']" address="140413462106832" type="string" size="15" encoding="base64"><![CDATA[SlMgRVJST1I7SlMgTE9H]]></property>
+[DBG]     <property name="HISTCONTROL" fullname="$_SERVER['HISTCONTROL']" address="140413462107024" type="string" size="10" encoding="base64"><![CDATA[aWdub3JlZHVwcw==]]></property>
+[DBG]     <property name="XDG_MENU_PREFIX" fullname="$_SERVER['XDG_MENU_PREFIX']" address="140413462107208" type="string" size="6" encoding="base64"><![CDATA[Z25vbWUt]]></property>
+[DBG]     <property name="AUTOJUMP_DATA_DIR" fullname="$_SERVER['AUTOJUMP_DATA_DIR']" address="140413462107936" type="string" size="30" encoding="base64"><![CDATA[L2hvbWUvYXcvLmxvY2FsL3NoYXJlL2F1dG9qdW1w]]></property>
+[DBG]     <property name="XDG_SESSION_COOKIE" fullname="$_SERVER['XDG_SESSION_COOKIE']" address="140413462108176" type="string" size="61" encoding="base64"><![CDATA[NTUyMTlmNzZmZmNhY2RmYjNkNGVkZTUzMDAwMDAwMWQtMTQwOTkzNzI2MS4xMzI5NzctMTM5NjkyOTEzMw==]]></property>
+[DBG]     <property name="QT_IM_MODULE" fullname="$_SERVER['QT_IM_MODULE']" address="140413462108368" type="string" size="4" encoding="base64"><![CDATA[aWJ1cw==]]></property>
+[DBG]     <property name="GDM_LANG" fullname="$_SERVER['GDM_LANG']" address="140413462108552" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="HOSTNAME" fullname="$_SERVER['HOSTNAME']" address="140413462108736" type="string" size="5" encoding="base64"><![CDATA[YXctdHA=]]></property>
+[DBG]     <property name="OLDPWD" fullname="$_SERVER['OLDPWD']" address="140413462108920" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="GJS_DEBUG_OUTPUT" fullname="$_SERVER['GJS_DEBUG_OUTPUT']" address="140413462109096" type="string" size="6" encoding="base64"><![CDATA[c3RkZXJy]]></property>
+[DBG]     <property name="WINDOWID" fullname="$_SERVER['WINDOWID']" address="140413462109288" type="string" size="9" encoding="base64"><![CDATA[MTEzMjQ2MjE1]]></property>
+[DBG]     <property name="NXDIR" fullname="$_SERVER['NXDIR']" address="140413462109472" type="string" size="7" encoding="base64"><![CDATA[L3Vzci9OWA==]]></property>
+[DBG]     <property name="HISTSIZE" fullname="$_SERVER['HISTSIZE']" address="140413462109648" type="string" size="5" encoding="base64"><![CDATA[MTAwMDA=]]></property>
+[DBG]     <property name="KDEDIRS" fullname="$_SERVER['KDEDIRS']" address="140413462109832" type="string" size="4" encoding="base64"><![CDATA[L3Vzcg==]]></property>
+[DBG]     <property name="QTLIB" fullname="$_SERVER['QTLIB']" address="140413462110016" type="string" size="21" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvbGli]]></property>
+[DBG]     <property name="PATH" fullname="$_SERVER['PATH']" address="140413462110312" type="string" size="131" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvYmluOi91c3IvTlgvYmluOi91c3IvbG9jYWwvYmluOi91c3IvYmluOi9iaW46L2hvbWUvYXcvYmluOi91c3IvbG9jYWwvc2JpbjovdXNyL3NiaW46L2hvbWUvYXcvLmNvbXBvc2VyL3ZlbmRvci9iaW4=]]></property>
+[DBG]     <property name="TERM" fullname="$_SERVER['TERM']" address="140413462110488" type="string" size="14" encoding="base64"><![CDATA[eHRlcm0tMjU2Y29sb3I=]]></property>
+[DBG]     <property name="HOME" fullname="$_SERVER['HOME']" address="140413462110664" type="string" size="8" encoding="base64"><![CDATA[L2hvbWUvYXc=]]></property>
+[DBG]     <property name="XDG_SEAT" fullname="$_SERVER['XDG_SEAT']" address="140413462110840" type="string" size="5" encoding="base64"><![CDATA[c2VhdDA=]]></property>
+[DBG]     <property name="XMODIFIERS" fullname="$_SERVER['XMODIFIERS']" address="140413462111024" type="string" size="8" encoding="base64"><![CDATA[QGltPWlidXM=]]></property>
+[DBG]     <property name="SHELL" fullname="$_SERVER['SHELL']" address="140413462111208" type="string" size="8" encoding="base64"><![CDATA[L2Jpbi96c2g=]]></property>
+[DBG]     <property name="XDG_RUNTIME_DIR" fullname="$_SERVER['XDG_RUNTIME_DIR']" address="140413462111384" type="string" size="13" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMA==]]></property>
+[DBG]     <property name="GPG_AGENT_INFO" fullname="$_SERVER['GPG_AGENT_INFO']" address="140413462111592" type="string" size="36" encoding="base64"><![CDATA[L3J1bi91c2VyLzUwMC9rZXlyaW5nLWVXYlNjdi9ncGc6MDox]]></property>
+[DBG]     <property name="USER" fullname="$_SERVER['USER']" address="140413462111776" type="string" size="2" encoding="base64"><![CDATA[YXc=]]></property>
+[DBG]     <property name="QTINC" fullname="$_SERVER['QTINC']" address="140413462111968" type="string" size="25" encoding="base64"><![CDATA[L3Vzci9saWI2NC9xdC0zLjMvaW5jbHVkZQ==]]></property>
+[DBG]     <property name="LS_COLORS" fullname="$_SERVER['LS_COLORS']" address="140413462113816" type="string" size="1681" encoding="base64"><![CDATA[cnM9MDpkaT0zODs1OzI3OmxuPTM4OzU7NTE6bWg9NDQ7Mzg7NTsxNTpwaT00MDszODs1OzExOnNvPTM4OzU7MTM6ZG89Mzg7NTs1OmJkPTQ4OzU7MjMyOzM4OzU7MTE6Y2Q9NDg7NTsyMzI7Mzg7NTszOm9yPTQ4OzU7MjMyOzM4OzU7OTptaT0wNTs0ODs1OzIzMjszODs1OzE1OnN1PTQ4OzU7MTk2OzM4OzU7MTU6c2c9NDg7NTsxMTszODs1OzE2OmNhPTQ4OzU7MTk2OzM4OzU7MjI2OnR3PTQ4OzU7MTA7Mzg7NTsxNjpvdz00ODs1OzEwOzM4OzU7MjE6c3Q9NDg7NTsyMTszODs1OzE1OmV4PTM4OzU7MzQ6Ki50YXI9Mzg7NTs5OioudGd6PTM4OzU7OToqLmFyYz0zODs1Ozk6Ki5hcmo9Mzg7NTs5OioudGF6PTM4OzU7OToqLmxoYT0zODs1Ozk6Ki5semg9Mzg7NTs5OioubHptYT0zODs1Ozk6Ki50bHo9Mzg7NTs5OioudHh6PTM4OzU7OToqLnR6bz0zODs1Ozk6Ki50N3o9Mzg7NTs5OiouemlwPTM4OzU7OToqLno9Mzg7NTs5OiouWj0zODs1Ozk6Ki5kej0zODs1Ozk6Ki5nej0zODs1Ozk6Ki5scno9Mzg7NTs5OioubHo9Mzg7NTs5OioubHpvPTM4OzU7OToqLnh6PTM4OzU7OToqLmJ6Mj0zODs1Ozk6Ki5iej0zODs1Ozk6Ki50Yno9Mzg7NTs5OioudGJ6Mj0zODs1Ozk6Ki50ej0zODs1Ozk6Ki5kZWI9Mzg7NTs5OioucnBtPTM4OzU7OToqLmphcj0zODs1Ozk6Ki53YXI9Mzg7NTs5OiouZWFyPTM4OzU7OToqLnNhcj0zODs1Ozk6Ki5yYXI9Mzg7NTs5OiouYWx6PTM4OzU7OToqLmFjZT0zODs1Ozk6Ki56b289Mzg7NTs5OiouY3Bpbz0zODs1Ozk6Ki43ej0zODs1Ozk6Ki5yej0zODs1Ozk6Ki5jYWI9Mzg7NTs5OiouanBnPTM4OzU7MTM6Ki5qcGVnPTM4OzU7MTM6Ki5naWY9Mzg7NTsxMzoqLmJtcD0zODs1OzEzOioucGJtPTM4OzU7MTM6Ki5wZ209Mzg7NTsxMzoqLnBwbT0zODs1OzEzOioudGdhPTM4OzU7MTM6Ki54Ym09Mzg7NTsxMzoqLnhwbT0zODs1OzEzOioudGlmPTM4OzU7MTM6Ki50aWZmPTM4OzU7MTM6Ki5wbmc9Mzg7NTsxMzoqLnN2Zz0zODs1OzEzOiouc3Znej0zODs1OzEzOioubW5nPTM4OzU7MTM6Kg==]]></property>
+[DBG]     <property name="GREP_OPTIONS" fullname="$_SERVER['GREP_OPTIONS']" address="140413462114072" type="string" size="87" encoding="base64"><![CDATA[LS1leGNsdWRlLWRpcj0uY3ZzIC0tZXhjbHVkZS1kaXI9LmdpdCAtLWV4Y2x1ZGUtZGlyPS5oZyAtLWV4Y2x1ZGUtZGlyPS5zdm4gLS1jb2xvcj1hdXRv]]></property>
+[DBG]     <property name="GREP_COLOR" fullname="$_SERVER['GREP_COLOR']" address="140413462114256" type="string" size="4" encoding="base64"><![CDATA[MTszMg==]]></property>
+[DBG]     <property name="PAGER" fullname="$_SERVER['PAGER']" address="140413462114440" type="string" size="4" encoding="base64"><![CDATA[bGVzcw==]]></property>
+[DBG]     <property name="LESS" fullname="$_SERVER['LESS']" address="140413462114616" type="string" size="2" encoding="base64"><![CDATA[LVI=]]></property>
+[DBG]     <property name="LC_CTYPE" fullname="$_SERVER['LC_CTYPE']" address="140413462114792" type="string" size="10" encoding="base64"><![CDATA[ZGVfREUudXRmOA==]]></property>
+[DBG]     <property name="LSCOLORS" fullname="$_SERVER['LSCOLORS']" address="140413462114984" type="string" size="22" encoding="base64"><![CDATA[R3hmeGN4ZHhieGVnZWRhYmFnYWNhZA==]]></property>
+[DBG]     <property name="GIT_EDITOR" fullname="$_SERVER['GIT_EDITOR']" address="140413462115168" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="EDITOR" fullname="$_SERVER['EDITOR']" address="140413462115352" type="string" size="3" encoding="base64"><![CDATA[dmlt]]></property>
+[DBG]     <property name="XDEBUG_CONFIG" fullname="$_SERVER['XDEBUG_CONFIG']" address="140413462115528" type="string" size="15" encoding="base64"><![CDATA[SURFS0VZPVBIUFNUT1JN]]></property>
+[DBG]     <property name="PHP_SELF" fullname="$_SERVER['PHP_SELF']" address="140413462117184" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_NAME" fullname="$_SERVER['SCRIPT_NAME']" address="140413462117584" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="SCRIPT_FILENAME" fullname="$_SERVER['SCRIPT_FILENAME']" address="140413462117984" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="PATH_TRANSLATED" fullname="$_SERVER['PATH_TRANSLATED']" address="140413462118384" type="string" size="29" encoding="base64"><![CDATA[U2NyaXB0cy9EdW1wRGVjaXNpb25UYWJsZS5waHA=]]></property>
+[DBG]     <property name="DOCUMENT_ROOT" fullname="$_SERVER['DOCUMENT_ROOT']" address="140413462118752" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+[DBG]     <property name="REQUEST_TIME_FLOAT" fullname="$_SERVER['REQUEST_TIME_FLOAT']" address="140413462118904" type="float"><![CDATA[1409950804.2661]]></property>
+[DBG]     <property name="REQUEST_TIME" fullname="$_SERVER['REQUEST_TIME']" address="140413462119064" type="int"><![CDATA[1409950804]]></property>
+[DBG]     <property name="argv" fullname="$_SERVER['argv']" address="140413462099336" type="array" children="1" numchildren="1"/>
+[DBG]     <property name="argc" fullname="$_SERVER['argc']" address="140413462099736" type="int"><![CDATA[1]]></property>
+[DBG]   </property>
+[DBG] </response>
+[DBG] 
+[IDE] run -i 49
+[DBG] <?xml version="1.0" encoding="iso-8859-1"?>
+[DBG] <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="run" transaction_id="49" status="stopping" reason="ok"/>
+[DBG] 
+[IDE] run -i 50
