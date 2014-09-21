@@ -24,4 +24,11 @@ class CommandEvent extends SessionEvent {
 		$this->command = $command;
 	}
 
+	/**
+	 * @return DebuggerCommand
+	 */
+	public function getCommand() {
+		return $this->command;
+	}
+
 }

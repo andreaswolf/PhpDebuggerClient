@@ -1,6 +1,9 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Log;
-use AndreasWolf\DebuggerClient\Proxy\ProxyListener;
+use AndreasWolf\DebuggerClient\Event\CommandEvent;
+use AndreasWolf\DebuggerClient\Event\StreamDataEvent;
+use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 
 /**
@@ -8,23 +11,33 @@ use AndreasWolf\DebuggerClient\Proxy\ProxyListener;
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class PrettyPrintingLogListener implements ProxyListener {
+class PrettyPrintingLogListener implements EventSubscriberInterface {
 
 	/**
 	 * @param string $data
 	 * @return void
 	 */
 	public function receivedDebuggerData($data) {
-		$data = substr($data, strpos($data, "\0") + 1);
-
 		$xmlNode = simplexml_load_string($data);
+		$this->formatAndOutputXml($xmlNode);
+	}
+
+	/**
+	 * @param \SimpleXMLElement $xmlNode
+	 * @param string $additionalPrefix An additional prefix for the output lines
+	 */
+	protected function formatAndOutputXml($xmlNode, $additionalPrefix = '') {
 		$doc = new \DOMDocument();
 		$doc->formatOutput = TRUE;
 		$doc->loadXML($xmlNode->asXML());
-		$data = $doc->saveXML();
-		$data = str_replace("\0", "", $data);
+		$xmlData = $doc->saveXML();
+		$xmlData = str_replace("\0", "", $xmlData);
 
-		$this->outputData('[DBG]', $data);
+		$prefix = '[DBG]';
+		if ($additionalPrefix != '') {
+			$prefix .= '[' . $additionalPrefix . ']';
+		}
+		$this->outputData($prefix, $xmlData);
 	}
 
 	/**
@@ -45,8 +58,78 @@ class PrettyPrintingLogListener implements ProxyListener {
 	protected function outputData($prefix, $data) {
 		$lines = explode("\n", $data);
 		foreach ($lines as $line) {
+			if (trim($line) == '') {
+				continue;
+			}
 			echo $prefix, " ", $line, "\n";
 		}
+	}
+
+	/**
+	 * Handler for a "command.sent" event.
+	 *
+	 * @param CommandEvent $event
+	 */
+	public function commandEventHandler(CommandEvent $event) {
+		$command = $event->getCommand();
+		$commandString = $command->getNameForProtocol();
+		if ($command->getArgumentsAsString() != '') {
+			$commandString .= ' ' . $command->getArgumentsAsString();
+		}
+		$this->outputData('[IDE]', $commandString);
+	}
+
+	/**
+	 * Handler for a "command.response.processed" event.
+	 *
+	 * @param StreamDataEvent $event
+	 */
+	public function streamDataEventHandler(StreamDataEvent $event) {
+		if (!($event->getStreamWrapper() instanceof DebuggerEngineStream)) {
+			// we’re only interested in data coming from the debugger engine
+			return;
+		}
+		$additionalPrefix = '';
+
+		$data = $event->getData();
+		if (strlen(trim($data)) == 0) {
+			return;
+		}
+		$xmlNode = simplexml_load_string($data);
+		if ($xmlNode->getName() == 'response') {
+			$attributes = $xmlNode->attributes();
+			$transactionId = (int)$attributes['transaction_id'];
+			$additionalPrefix = (string)$transactionId;
+		}
+
+		$this->formatAndOutputXml($xmlNode, $additionalPrefix);
+	}
+
+	/**
+	 * Returns an array of event names this subscriber wants to listen to.
+	 *
+	 * The array keys are event names and the value can be:
+	 *
+	 *  * The method name to call (priority defaults to 0)
+	 *  * An array composed of the method name to call and the priority
+	 *  * An array of arrays composed of the method names to call and respective
+	 *    priorities, or 0 if unset
+	 *
+	 * For instance:
+	 *
+	 *  * array('eventName' => 'methodName')
+	 *  * array('eventName' => array('methodName', $priority))
+	 *  * array('eventName' => array(array('methodName1', $priority), array('methodName2'))
+	 *
+	 * @return array The event names to listen to
+	 *
+	 * @api
+	 */
+	public static function getSubscribedEvents() {
+		return array(
+			'stream.data.received' => 'streamDataEventHandler',
+			'command.sent' => 'commandEventHandler',
+		);
 	}
 
 }
