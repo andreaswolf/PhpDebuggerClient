@@ -67,6 +67,17 @@ class DebugSession {
 	protected $status = self::STATUS_NEW;
 
 	/**
+	 * The last location the program execution is known to have been at.
+	 *
+	 * This is an array consisting of the file name and the line within that file.
+	 * If the status is "running", this will most likely not reflect the current position; just as well it is completely
+	 * unusable if the session has already ended.
+	 *
+	 * @var array[string, int]
+	 */
+	protected $lastKnownPosition;
+
+	/**
 	 * @var DebuggerEngineMessageParser
 	 */
 	protected $messageParser;
@@ -142,6 +153,22 @@ class DebugSession {
 		if ($oldStatus != $this->status) {
 			$this->eventDispatcher->dispatch('session.status.changed', new SessionEvent($this));
 		}
+		if ($engineResponse->hasFilename()) {
+			$this->lastKnownPosition = array($engineResponse->getFilename(), $engineResponse->getLineNumber());
+			$this->eventDispatcher->dispatch('session.file-position.updated', new SessionEvent($this));
+		}
+	}
+
+	/**
+	 * Returns the last position the program execution was known to have been at.
+	 *
+	 * This does not necessarily reflect the current position; see the description of property `lastKnownPosition` for
+	 * more information.
+	 *
+	 * @return array(string, int)
+	 */
+	public function getLastKnownFilePosition() {
+		return $this->lastKnownPosition;
 	}
 
 	/**

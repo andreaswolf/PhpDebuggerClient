@@ -55,6 +55,13 @@ class EngineStatusResponse implements DebuggerCommandResult {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function hasFilename() {
+		return $this->filename !== NULL;
+	}
+
+	/**
 	 * @return mixed
 	 */
 	public function getFilename() {
