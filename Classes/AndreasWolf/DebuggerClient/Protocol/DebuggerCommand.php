@@ -15,8 +15,6 @@ interface DebuggerCommand {
 	/** The result of the command was an error */
 	const STATUS_ERROR = 3;
 
-	public function __construct(DebugSession $session);
-
 	/**
 	 * Returns the status of this command: if it was sent, if a response was received and if the response was
 	 * successful.
