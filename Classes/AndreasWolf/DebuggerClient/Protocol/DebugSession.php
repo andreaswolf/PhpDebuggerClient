@@ -4,10 +4,6 @@ namespace AndreasWolf\DebuggerClient\Protocol;
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event\CommandEvent;
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
-use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
-use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
-use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 
@@ -132,7 +128,12 @@ class DebugSession {
 	 * @param \SimpleXMLElement $response
 	 */
 	public function finishTransaction($transactionId, \SimpleXMLElement $response) {
-		$this->transactions[$transactionId]->finish($response);
+		$transaction = $this->transactions[$transactionId];
+		$command = $transaction->getCommand();
+
+		$transaction->finish($response);
+
+		$this->eventDispatcher->dispatch('command.response.processed', new CommandEvent($command, $this));
 	}
 
 	/**
