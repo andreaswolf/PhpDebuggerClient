@@ -52,4 +52,11 @@ class Transaction {
 		$this->command->processResponse($response);
 	}
 
+	/**
+	 * @return DebuggerCommandResult
+	 */
+	public function getResult() {
+		return $this->command->getResponse();
+	}
+
 }

@@ -26,6 +26,20 @@ interface DebuggerCommand {
 	public function getStatus();
 
 	/**
+	 * Returns TRUE if we have received a response from the debugger engine already.
+	 *
+	 * @return bool
+	 */
+	public function hasResponse();
+
+	/**
+	 * Returns the response sent by the debugger engine. Use `hasResponse()` to check for a response first.
+	 *
+	 * @return DebuggerCommandResult
+	 */
+	public function getResponse();
+
+	/**
 	 * Returns the name as used in the protocol, i.e. lowercased and word parts separated with underscores.
 	 * @return string
 	 */

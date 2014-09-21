@@ -32,6 +32,24 @@ abstract class DebuggerBaseCommand implements DebuggerCommand {
 	}
 
 	/**
+	 * Returns TRUE if we have received a response from the debugger engine already.
+	 *
+	 * @return bool
+	 */
+	public function hasResponse() {
+		return is_object($this->response);
+	}
+
+	/**
+	 * Returns the response sent by the debugger engine. Use `hasResponse()` to check for a response first.
+	 *
+	 * @return DebuggerCommandResult
+	 */
+	public function getResponse() {
+		return $this->response;
+	}
+
+	/**
 	 * @return int
 	 */
 	public function getStatus() {
