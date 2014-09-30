@@ -6,7 +6,7 @@ use AndreasWolf\DebuggerClient\Event\BreakpointEvent;
 use AndreasWolf\DebuggerClient\Protocol\Breakpoint\Breakpoint;
 use AndreasWolf\DebuggerClient\Protocol\Breakpoint\LineBreakpoint;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerBaseCommand;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 
 
 /**

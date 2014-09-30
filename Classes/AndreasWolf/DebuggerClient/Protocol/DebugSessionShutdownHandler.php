@@ -2,6 +2,7 @@
 namespace AndreasWolf\DebuggerClient\Protocol;
 
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Streams\StreamWrapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

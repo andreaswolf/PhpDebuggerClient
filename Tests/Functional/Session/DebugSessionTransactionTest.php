@@ -1,9 +1,9 @@
 <?php
-namespace Functional\Protocol;
+namespace AndreasWolf\DebuggerClient\Tests\Functional\Session;
 use AndreasWolf\DebuggerClient\Protocol\Command;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Tests\Functional\FunctionalTestCase;
 
 

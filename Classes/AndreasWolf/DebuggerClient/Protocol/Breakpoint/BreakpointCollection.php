@@ -4,7 +4,7 @@ namespace AndreasWolf\DebuggerClient\Protocol\Breakpoint;
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event;
 use AndreasWolf\DebuggerClient\Protocol\Command\BreakpointSet;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 

@@ -2,7 +2,7 @@
 namespace AndreasWolf\DebuggerClient\Tests\Functional\Protocol;
 
 use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
 use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
 use AndreasWolf\DebuggerClient\Streams\StreamWrapper;

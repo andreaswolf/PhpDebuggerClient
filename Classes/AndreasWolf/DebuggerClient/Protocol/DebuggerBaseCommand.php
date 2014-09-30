@@ -1,5 +1,8 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Protocol;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
+
+
 /**
  * Base class for debugger engine commands.
  *

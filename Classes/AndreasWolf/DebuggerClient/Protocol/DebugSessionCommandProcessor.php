@@ -1,5 +1,6 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Protocol;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Streams\DebuggerEngineStream;
 
 

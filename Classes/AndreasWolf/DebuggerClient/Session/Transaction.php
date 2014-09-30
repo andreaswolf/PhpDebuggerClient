@@ -1,5 +1,7 @@
 <?php
-namespace AndreasWolf\DebuggerClient\Protocol;
+namespace AndreasWolf\DebuggerClient\Session;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerCommandResult;
 
 /**
  *

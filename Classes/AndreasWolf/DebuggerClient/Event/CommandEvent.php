@@ -1,7 +1,7 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Event;
 use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use Symfony\Component\EventDispatcher\Event;
 
 

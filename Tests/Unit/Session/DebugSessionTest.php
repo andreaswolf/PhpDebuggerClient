@@ -1,8 +1,8 @@
 <?php
-namespace AndreasWolf\DebuggerClient\Tests\Unit\Protocol;
+namespace AndreasWolf\DebuggerClient\Tests\Unit\Session;
 
 use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Tests\Unit\UnitTestCase;
 
 

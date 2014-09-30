@@ -1,6 +1,6 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Event;
-use AndreasWolf\DebuggerClient\Protocol\DebugSession;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use Symfony\Component\EventDispatcher\Event;
 
 
@@ -18,7 +18,7 @@ class SessionEvent extends Event {
 	}
 
 	/**
-	 * @return \AndreasWolf\DebuggerClient\Protocol\DebugSession
+	 * @return \AndreasWolf\DebuggerClient\Session\DebugSession
 	 */
 	public function getSession() {
 		return $this->session;

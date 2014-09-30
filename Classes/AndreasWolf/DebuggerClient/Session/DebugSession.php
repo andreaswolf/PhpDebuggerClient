@@ -1,11 +1,16 @@
 <?php
-namespace AndreasWolf\DebuggerClient\Protocol;
+namespace AndreasWolf\DebuggerClient\Session;
 
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event\CommandEvent;
 use AndreasWolf\DebuggerClient\Event\SessionEvent;
 use AndreasWolf\DebuggerClient\Protocol\Breakpoint\BreakpointCollection;
+use AndreasWolf\DebuggerClient\Protocol\Command;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerCommand;
+use AndreasWolf\DebuggerClient\Protocol\DebuggerEngineMessageParser;
+use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
 use AndreasWolf\DebuggerClient\Protocol\Response\EngineStatusResponse;
+use AndreasWolf\DebuggerClient\Session\Transaction;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 

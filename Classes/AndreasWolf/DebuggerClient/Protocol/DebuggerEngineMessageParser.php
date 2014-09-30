@@ -3,6 +3,7 @@ namespace AndreasWolf\DebuggerClient\Protocol;
 
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Event\StreamDataEvent;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Streams\StreamDataSink;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
