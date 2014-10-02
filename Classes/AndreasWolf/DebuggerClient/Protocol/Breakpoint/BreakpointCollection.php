@@ -56,7 +56,7 @@ class BreakpointCollection implements EventSubscriberInterface {
 			foreach ($this->breakpoints as $breakpoint) {
 				if ($breakpoint->matchesPosition($currentPosition[0], $currentPosition[1])) {
 					Bootstrap::getInstance()->getEventDispatcher()->dispatch(
-						'session.breakpoint.hit', new Event\BreakpointEvent($breakpoint)
+						'session.breakpoint.hit', new Event\BreakpointEvent($breakpoint, $this->session)
 					);
 
 					break;

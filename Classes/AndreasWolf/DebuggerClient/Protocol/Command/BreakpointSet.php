@@ -60,7 +60,7 @@ class BreakpointSet extends DebuggerBaseCommand {
 	 */
 	public function processResponse(\SimpleXMLElement $responseXmlNode) {
 		Bootstrap::getInstance()->getEventDispatcher()->dispatch(
-			'session.breakpoint.set', new BreakpointEvent($this->breakpoint)
+			'session.breakpoint.set', new BreakpointEvent($this->breakpoint, $this->session)
 		);
 	}
 
