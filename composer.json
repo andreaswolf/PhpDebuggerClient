@@ -7,11 +7,13 @@
 		"symfony/console": "*",
 		"symfony/event-dispatcher": "*",
 		"psr/log": "*",
-		"monolog/monolog": "*"
+		"monolog/monolog": "*",
+		"react/promise": "*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
-		"theseer/phpdox": "*"
+		"theseer/phpdox": "*",
+		"mockery/mockery": "dev-master"
 	},
 	"authors": [
 		{
