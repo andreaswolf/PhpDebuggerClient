@@ -99,15 +99,15 @@ XML;
 	 */
 	public function promiseGetsRejectedForErrorResponse() {
 		$command = $this->getCommandObject('$foo');
-		$responseXml = simplexml_load_string($this->successResponseXml);
-		$promiseSpy = $this->getPromiseSpy(TRUE, FALSE);
+		$responseXml = simplexml_load_string($this->errorResponseXml);
+		$promiseSpy = $this->getPromiseSpy(FALSE, NULL, TRUE);
 		$command->promise()->then(array($promiseSpy, 'resolve'), array($promiseSpy, 'reject'));
 
 		$command->processResponse($responseXml);
 
 		// this assertion is just to let PHPUnit not mark this test as "risky" because it does not detect
 		// Mockery’s assertions.
-		$this->assertTrue($command->getResponse()->isSuccessful());
+		$this->assertFalse($command->getResponse()->isSuccessful());
 	}
 
 	/**
