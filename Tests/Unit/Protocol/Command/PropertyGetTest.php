@@ -4,6 +4,7 @@ namespace AndreasWolf\DebuggerClient\Tests\Unit\Protocol\Command;
 use AndreasWolf\DebuggerClient\Protocol\Command\PropertyGet;
 use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Tests\Unit\UnitTestCase;
+use Mockery\MockInterface;
 
 
 /**
@@ -49,16 +50,21 @@ XML;
 	}
 
 	/**
-	 * @param bool $withExpectedResolve
-	 * @param bool $withExpectedReject
-	 * @return \PHPUnit_Framework_MockObject_MockObject
+	 * @param bool $expectResolve
+	 * @param mixed $expectedResolutionValue
+	 * @param bool $expectReject
+	 * @return MockInterface
 	 */
-	protected function getPromiseSpy($withExpectedResolve = FALSE, $withExpectedReject = FALSE) {
+	protected function getPromiseSpy($expectResolve = FALSE, $expectedResolutionValue = NULL,
+	                                 $expectReject = FALSE) {
 		$mock = \Mockery::mock('\StdClass');
-		if ($withExpectedResolve) {
-			$mock->shouldReceive('resolve')->once();
+		if ($expectResolve === TRUE) {
+			$expectation = $mock->shouldReceive('resolve')->once();
+			if ($expectedResolutionValue !== NULL) {
+				$expectation->withArgs(array($expectedResolutionValue));
+			}
 		}
-		if ($withExpectedReject) {
+		if ($expectReject) {
 			$mock->shouldReceive('reject')->once();
 		}
 
@@ -71,7 +77,23 @@ XML;
 	public function promiseGetsResolvedForSuccessfulResponse() {
 		$command = $this->getCommandObject('$foo');
 		$responseXml = simplexml_load_string($this->successResponseXml);
-		$promiseSpy = $this->getPromiseSpy(TRUE, FALSE);
+		$promiseSpy = $this->getPromiseSpy(TRUE);
+		$command->promise()->then(array($promiseSpy, 'resolve'), array($promiseSpy, 'reject'));
+
+		$command->processResponse($responseXml);
+
+		// this assertion is just to let PHPUnit not mark this test as "risky" because it does not detect
+		// Mockery’s assertions.
+		$this->assertTrue($command->getResponse()->isSuccessful());
+	}
+
+	/**
+	 * @test
+	 */
+	public function promiseResolutionGetPassedCorrectValue() {
+		$command = $this->getCommandObject('$foo');
+		$responseXml = simplexml_load_string($this->successResponseXml);
+		$promiseSpy = $this->getPromiseSpy(TRUE, 'someVariableValue');
 		$command->promise()->then(array($promiseSpy, 'resolve'), array($promiseSpy, 'reject'));
 
 		$command->processResponse($responseXml);

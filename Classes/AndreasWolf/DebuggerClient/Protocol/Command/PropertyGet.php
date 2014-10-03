@@ -61,7 +61,7 @@ class PropertyGet extends Deferrable {
 			$this->response = new PropertyGetResponse($value, TRUE);
 
 			if ($this->promise && is_callable($this->resolveCallback)) {
-				call_user_func($this->resolveCallback);
+				call_user_func($this->resolveCallback, $value);
 			}
 		}
 
