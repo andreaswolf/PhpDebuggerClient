@@ -21,6 +21,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class Client implements EventDispatcherInterface {
 
 	/**
+	 * @var StreamWatcher
+	 */
+	protected $streamWatcher;
+
+	/**
 	 * @var bool
 	 */
 	protected $debug = FALSE;
@@ -65,14 +70,14 @@ class Client implements EventDispatcherInterface {
 	 * Runs the debugging session
 	 */
 	public function run() {
+		$this->streamWatcher = new StreamWatcher();
 		$this->setUpListenerStream();
-		$streamWatcher = new StreamWatcher();
-		$streamWatcher->attachStream($this->debuggerListenStream);
+		$this->streamWatcher->attachStream($this->debuggerListenStream);
 
-		$this->eventDispatcher->addListener('stream.connection.opened', function(StreamEvent $event) use ($streamWatcher) {
+		$this->eventDispatcher->addListener('stream.connection.opened', function(StreamEvent $event) {
 			// attach a new stream to the watcher as soon as it is opened; otherwise incoming data would
 			// never be received by the application
-			$streamWatcher->attachStream($event->getStreamWrapper());
+			$this->streamWatcher->attachStream($event->getStreamWrapper());
 		// high priority because we want to be sure that the stream is instantly watched
 		}, 1000);
 
@@ -80,7 +85,7 @@ class Client implements EventDispatcherInterface {
 
 		while (true) {
 			$this->debug("Watching streams for data");
-			$streamWatcher->watchAndNotifyActiveStreams();
+			$this->streamWatcher->watchAndNotifyActiveStreams();
 		}
 	}
 
@@ -114,6 +119,15 @@ class Client implements EventDispatcherInterface {
 
 	public function disableDebugOutput() {
 		$this->debug = FALSE;
+	}
+
+	/**
+	 * Adds a new stream that should be watched in this classes run loop.
+	 *
+	 * @param StreamWrapper $stream
+	 */
+	public function attachStream(StreamWrapper $stream) {
+		$this->streamWatcher->attachStream($stream);
 	}
 
 	/********************************************
