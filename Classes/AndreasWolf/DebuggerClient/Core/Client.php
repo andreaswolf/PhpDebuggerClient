@@ -52,13 +52,6 @@ class Client implements EventDispatcherInterface {
 	protected $streamUriTemplate = 'tcp://%s:%s';
 
 	/**
-	 * The listeners attached to this proxy.
-	 *
-	 * @var ProxyListener[]
-	 */
-	protected $listeners = array();
-
-	/**
 	 * @var EventDispatcherInterface
 	 */
 	protected $eventDispatcher;
@@ -98,36 +91,6 @@ class Client implements EventDispatcherInterface {
 		$lines = explode("\n", $data);
 		foreach ($lines as $line) {
 			echo "[DEBUG] ", $line, "\n";
-		}
-	}
-
-	/**
-	 * @param ProxyListener $listener
-	 * @return void
-	 */
-	public function attachListener(ProxyListener $listener) {
-		$this->listeners[] = $listener;
-	}
-
-	/**
-	 * Notifies the listeners about new data that has arrived from the IDE.
-	 *
-	 * @param string $data
-	 */
-	protected function notifyIdeListeners($data) {
-		foreach ($this->listeners as $listener) {
-			$listener->receivedClientData($data);
-		}
-	}
-
-	/**
-	 * Notifies the listeners about new data that has arrived from the debugger.
-	 *
-	 * @param string $data
-	 */
-	protected function notifyDebuggerListeners($data) {
-		foreach ($this->listeners as $listener) {
-			$listener->receivedDebuggerData($data);
 		}
 	}
 
