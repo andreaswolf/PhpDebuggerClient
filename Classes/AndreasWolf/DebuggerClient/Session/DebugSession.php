@@ -185,6 +185,11 @@ class DebugSession {
 		}
 	}
 
+	public function close() {
+		$this->eventDispatcher->removeSubscriber($this->breakpoints);
+		$this->status = self::STATUS_CLOSED;
+	}
+
 	/**
 	 * Returns the last position the program execution was known to have been at.
 	 *
