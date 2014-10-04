@@ -103,6 +103,8 @@ class Client implements EventDispatcherInterface {
 		));
 		$this->debuggerListenStream->setDataHandler(new ConnectionListener($this->debuggerListenStream));
 
+		$this->eventDispatcher->dispatch('listener.ready', new StreamEvent($this->debuggerListenStream));
+
 		$this->debug("Set up streams");
 	}
 
