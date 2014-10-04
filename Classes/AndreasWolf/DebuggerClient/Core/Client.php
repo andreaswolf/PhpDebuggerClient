@@ -103,9 +103,14 @@ class Client implements EventDispatcherInterface {
 	 * Creates the debugger listener stream.
 	 */
 	protected function setUpListenerStream() {
-		$this->debuggerListenStream = new StreamWrapper(stream_socket_server(
-			sprintf($this->streamUriTemplate, $this->debuggerListenAddress, $this->debuggerPort), $errno, $errstr
-		));
+		$address = sprintf($this->streamUriTemplate, $this->debuggerListenAddress, $this->debuggerPort);
+		$stream = stream_socket_server(
+			$address, $errno, $errstr
+		);
+		if (!$stream) {
+			throw new \RuntimeException('Cannot open listening stream ' . $address);
+		}
+		$this->debuggerListenStream = new StreamWrapper($stream);
 		$this->debuggerListenStream->setDataHandler(new ConnectionListener($this->debuggerListenStream));
 
 		$this->eventDispatcher->dispatch('listener.ready', new StreamEvent($this->debuggerListenStream));
