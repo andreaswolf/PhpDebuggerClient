@@ -61,14 +61,20 @@ class StreamWrapper {
 	/**
 	 * @param string $data
 	 * @return void
+	 * @throws \RuntimeException
 	 */
 	public function sendData($data) {
+		if (!$this->isActive()) {
+			throw new \RuntimeException('Writing data to inactive stream');
+		}
 		$bytesSent = $totalBytesSent = 0;
 		$bytesToSend = strlen($data);
 		while ($totalBytesSent < $bytesToSend) {
 			$bytesSent = fwrite($this->stream, substr($data, $totalBytesSent));
 
-			// TODO check for error: if ($bytesSent === FALSE)
+			if ($bytesSent === FALSE) {
+				throw new \RuntimeException('Could not write to stream');
+			}
 
 			$totalBytesSent += $bytesSent;
 		}
