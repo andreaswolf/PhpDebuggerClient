@@ -40,4 +40,19 @@ interface Breakpoint {
 	 */
 	public function matchesPosition($file, $line);
 
+	/**
+	 * Should be called when this breakpoint was hit.
+	 *
+	 * @return void
+	 */
+	public function hit();
+
+	/**
+	 * Sets a callback that is triggered when the breakpoint was hit.
+	 *
+	 * @param callable $callback
+	 * @return void
+	 */
+	public function onHit(callable $callback);
+
 }

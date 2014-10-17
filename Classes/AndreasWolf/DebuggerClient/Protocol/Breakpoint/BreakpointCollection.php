@@ -52,9 +52,11 @@ class BreakpointCollection implements EventSubscriberInterface {
 
 		if ($session->getStatus() === DebugSession::STATUS_PAUSED) {
 			// we’ve hit a breakpoint
-			$currentPosition = $session->getLastKnownFilePosition();
+			list($currentFile, $currentLine) = $session->getLastKnownFilePosition();
 			foreach ($this->breakpoints as $breakpoint) {
-				if ($breakpoint->matchesPosition($currentPosition[0], $currentPosition[1])) {
+				if ($breakpoint->matchesPosition($currentFile, $currentLine)) {
+					$breakpoint->hit();
+
 					Bootstrap::getInstance()->getEventDispatcher()->dispatch(
 						'session.breakpoint.hit', new Event\BreakpointEvent($breakpoint, $this->session)
 					);
