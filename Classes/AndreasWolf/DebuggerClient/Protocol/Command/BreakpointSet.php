@@ -14,7 +14,7 @@ use AndreasWolf\DebuggerClient\Session\DebugSession;
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class BreakpointSet extends DebuggerBaseCommand {
+class BreakpointSet extends Deferrable {
 
 	/**
 	 * @var Breakpoint
@@ -59,9 +59,15 @@ class BreakpointSet extends DebuggerBaseCommand {
 	 * @return void
 	 */
 	public function processResponse(\SimpleXMLElement $responseXmlNode) {
-		Bootstrap::getInstance()->getEventDispatcher()->dispatch(
-			'session.breakpoint.set', new BreakpointEvent($this->breakpoint, $this->session)
-		);
+		if ($responseXmlNode->error->count() > 0) {
+			$this->reject();
+		} else {
+			Bootstrap::getInstance()->getEventDispatcher()->dispatch(
+				'session.breakpoint.set', new BreakpointEvent($this->breakpoint, $this->session)
+			);
+
+			$this->resolve(1);
+		}
 	}
 
 }
