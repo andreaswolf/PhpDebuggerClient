@@ -49,4 +49,23 @@ abstract class Deferrable extends DebuggerBaseCommand implements Promise\Promiso
 		return $this->promise;
 	}
 
+	/**
+	 * @return void
+	 */
+	protected function reject() {
+		if ($this->promise && is_callable($this->rejectCallback)) {
+			call_user_func($this->rejectCallback);
+		}
+	}
+
+	/**
+	 * @param mixed $value
+	 * @return void
+	 */
+	protected function resolve($value) {
+		if ($this->promise && is_callable($this->resolveCallback)) {
+			call_user_func($this->resolveCallback, $value);
+		}
+	}
+
 }

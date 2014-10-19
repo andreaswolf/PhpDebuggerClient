@@ -53,16 +53,12 @@ class PropertyGet extends Deferrable {
 		if ($responseXmlNode->error->count() > 0) {
 			$this->response = new PropertyGetResponse(NULL, FALSE);
 
-			if ($this->promise && is_callable($this->rejectCallback)) {
-				call_user_func($this->rejectCallback);
-			}
+			$this->reject();
 		} else {
 			$value = $this->readValueFromResponseXml($responseXmlNode);
 			$this->response = new PropertyGetResponse($value, TRUE);
 
-			if ($this->promise && is_callable($this->resolveCallback)) {
-				call_user_func($this->resolveCallback, $value);
-			}
+			$this->resolve($value);
 		}
 
 		// TODO remove this in favor of the resolve/reject callbacks
