@@ -33,6 +33,9 @@ class StreamWrapper {
 	 */
 	public function __construct($stream) {
 		$this->stream = $stream;
+
+		// set stream non-blocking
+		stream_set_blocking($this->stream, 0);
 	}
 
 	/**
