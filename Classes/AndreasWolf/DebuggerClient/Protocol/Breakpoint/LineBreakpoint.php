@@ -22,6 +22,10 @@ class LineBreakpoint extends BaseBreakpoint {
 	 * @param int $line
 	 */
 	public function __construct($file, $line) {
+		if (substr($file, 0, 7) !== 'file://') {
+			$file = 'file:///' . ltrim($file, '/');
+		}
+
 		$this->file = $file;
 		$this->line = $line;
 	}

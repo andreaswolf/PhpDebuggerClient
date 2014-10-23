@@ -1,5 +1,5 @@
 <?php
-namespace Unit\Protocol\Breakpoint;
+namespace AndreasWolf\DebuggerClient\Unit\Protocol\Breakpoint;
 
 use AndreasWolf\DebuggerClient\Protocol\Breakpoint\BaseBreakpoint;
 use AndreasWolf\DebuggerClient\Tests\Unit\UnitTestCase;
