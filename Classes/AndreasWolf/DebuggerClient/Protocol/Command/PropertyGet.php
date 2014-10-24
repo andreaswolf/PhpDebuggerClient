@@ -2,6 +2,8 @@
 namespace AndreasWolf\DebuggerClient\Protocol\Command;
 
 use AndreasWolf\DebuggerClient\Protocol\DebuggerBaseCommand;
+use AndreasWolf\DebuggerClient\Protocol\Response\ExpressionValue;
+use AndreasWolf\DebuggerClient\Protocol\Response\ExpressionValueFactory;
 use AndreasWolf\DebuggerClient\Protocol\Response\PropertyGetResponse;
 use AndreasWolf\DebuggerClient\Session\DebugSession;
 use React\Promise;
@@ -69,19 +71,12 @@ class PropertyGet extends Deferrable {
 
 	/**
 	 * @param \SimpleXMLElement $responseXmlNode
-	 * @return string
+	 * @return ExpressionValue
 	 */
 	protected function readValueFromResponseXml(\SimpleXMLElement $responseXmlNode) {
-		/** @var \SimpleXMLElement $propertyNode */
-		$propertyNode = $responseXmlNode->property;
-		$attributes = $propertyNode->attributes();
+		$expressionValueFactory = new ExpressionValueFactory();
 
-		$value = (string)$propertyNode;
-		if ($attributes['encoding'] == 'base64') {
-			$value = base64_decode($value);
-		}
-
-		return $value;
+		return $expressionValueFactory->createValueObject($responseXmlNode);
 	}
 
 }

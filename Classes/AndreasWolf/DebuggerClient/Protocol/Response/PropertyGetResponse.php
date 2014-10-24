@@ -16,7 +16,7 @@ class PropertyGetResponse implements DebuggerCommandResult {
 	protected $successful;
 
 	/**
-	 * @var mixed
+	 * @var ExpressionValue
 	 */
 	protected $value;
 
@@ -33,7 +33,7 @@ class PropertyGetResponse implements DebuggerCommandResult {
 	}
 
 	/**
-	 * @return mixed
+	 * @return ExpressionValue
 	 */
 	public function getValue() {
 		return $this->value;

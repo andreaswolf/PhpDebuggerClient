@@ -93,26 +93,13 @@ XML;
 	public function promiseResolutionGetPassedCorrectValue() {
 		$command = $this->getCommandObject('$foo');
 		$responseXml = simplexml_load_string($this->successResponseXml);
-		$promiseSpy = $this->getPromiseSpy(TRUE, 'someVariableValue');
+		$promiseSpy = $this->getPromiseSpy(TRUE, \Mockery::type('AndreasWolf\DebuggerClient\Protocol\Response\ExpressionValue'));
 		$command->promise()->then(array($promiseSpy, 'resolve'), array($promiseSpy, 'reject'));
 
 		$command->processResponse($responseXml);
 
 		// this assertion is just to let PHPUnit not mark this test as "risky" because it does not detect
 		// Mockery’s assertions.
-		$this->assertTrue($command->getResponse()->isSuccessful());
-	}
-
-	/**
-	 * @test
-	 */
-	public function base64EncodedPropertyValueIsCorrectlyExtractedFromResponseXml() {
-		$command = $this->getCommandObject('$foo');
-		$responseXml = simplexml_load_string($this->successResponseXml);
-
-		$command->processResponse($responseXml);
-
-		$this->assertEquals('someVariableValue', $command->getResponse()->getValue());
 		$this->assertTrue($command->getResponse()->isSuccessful());
 	}
 
