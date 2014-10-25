@@ -17,7 +17,7 @@ class BreakpointSetTest extends UnitTestCase {
 	 */
 	public function promiseIsRejectedOnError() {
 		$subject = new BreakpointSet(
-			$this->getMock('AndreasWolf\DebuggerClient\Session\DebugSession'),
+			$this->getMockBuilder('AndreasWolf\DebuggerClient\Session\DebugSession')->disableOriginalConstructor()->getMock(),
 			$this->getMock('AndreasWolf\DebuggerClient\Protocol\Breakpoint\Breakpoint')
 		);
 
