@@ -15,10 +15,23 @@ class ExpressionValueFactory {
 	public function createValueObject($xmlElement) {
 		/** @var \SimpleXMLElement $node */
 		$node = $xmlElement->property;
+
+		return $this->createValueObjectForPropertyNode($node);
+	}
+
+	/**
+	 * @param $node
+	 * @return ExpressionValue
+	 */
+	protected function createValueObjectForPropertyNode($node) {
 		$dataType = $this->getPropertyType($node);
 		$rawValue = $this->readSimplePropertyValue($dataType, $node);
 
-		return new ExpressionValue($dataType, $rawValue);
+		if ($dataType == ExpressionValue::TYPE_OBJECT) {
+			return new Object($rawValue);
+		} else {
+			return new ExpressionValue($dataType, $rawValue);
+		}
 	}
 
 	/**
@@ -95,11 +108,31 @@ class ExpressionValueFactory {
 				$rawValue = (bool)$value;
 				break;
 
+			case ExpressionValue::TYPE_OBJECT:
+				$rawValue = $this->readObjectProperties($propertyNode);
+				break;
+
 			default:
 				throw new \RuntimeException('Unknown type ' . $type);
 		}
 
 		return $rawValue;
+	}
+
+	/**
+	 * @param \SimpleXMLElement $objectNode
+	 * @return ObjectProperty[]
+	 */
+	protected function readObjectProperties(\SimpleXMLElement $objectNode) {
+		$properties = array();
+		/** @var \SimpleXMLElement $child */
+		foreach ($objectNode->children() as $child) {
+			$childAttributes = $child->attributes();
+			$name = (string)$childAttributes['name'];
+			$properties[$name] = $this->createValueObjectForPropertyNode($child);
+		}
+
+		return $properties;
 	}
 
 }
