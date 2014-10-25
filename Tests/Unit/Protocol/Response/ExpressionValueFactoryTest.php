@@ -41,11 +41,29 @@ class ExpressionValueFactoryTest extends UnitTestCase {
 				ExpressionValue::TYPE_INTEGER,
 				42
 			),
+			'negative integer value' => array(
+				'<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="13"><property name="$integer" fullname="$integer" address="140421219446992" type="int"><![CDATA[-42]]></property></response>',
+				ExpressionValue::TYPE_INTEGER,
+				-42
+			),
 			'positive float value' => array(
 				'<?xml version="1.0" encoding="iso-8859-1"?>
 			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="14"><property name="$float" fullname="$float" address="140421219447128" type="float"><![CDATA[3.1415]]></property></response>',
 				ExpressionValue::TYPE_FLOAT,
 				3.1415
+			),
+			'negative float value' => array(
+				'<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="14"><property name="$float" fullname="$float" address="140421219447128" type="float"><![CDATA[-3.1415]]></property></response>',
+				ExpressionValue::TYPE_FLOAT,
+				-3.1415
+			),
+			'array value' => array(
+				'<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="14"><property name="$array" fullname="$array" address="140421219447128" type="array"></property></response>',
+				ExpressionValue::TYPE_ARRAY,
+				array()
 			),
 			'NULL value' => array(
 				'<?xml version="1.0" encoding="iso-8859-1"?>
@@ -216,6 +234,48 @@ class ExpressionValueFactoryTest extends UnitTestCase {
 		$propertyObject = $expressionValue->getProperty('subject');
 		$this->assertSame($expectedValue, $propertyObject->getRawValue());
 		$this->assertEquals($expectedType, $propertyObject->getDataType());
+	}
+
+	/**
+	 * @test
+	 */
+	public function arrayWithNumericKeyIsCorrectlyDecoded() {
+		$subject = new ExpressionValueFactory();
+		/** @var Object $expressionValue */
+		$expressionValue = $subject->createValueObject(simplexml_load_string('<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="pebugger-13.property_get.">
+				<property name="$array" fullname="$array" address="140330420476216" type="array" children="1" numchildren="2" page="0" pagesize="32">
+					<property name="0" fullname="$array[0]" address="140330420475312" type="int"><![CDATA[1]]></property>
+					<property name="1" fullname="$array[1]" address="140330420475448" type="int"><![CDATA[2]]></property>
+				</property>
+			</response>'));
+
+		$firstArrayEntry = $expressionValue->getProperty(0);
+		$this->assertSame(1, $firstArrayEntry->getRawValue());
+
+		$secondArrayEntry = $expressionValue->getProperty(1);
+		$this->assertSame(2, $secondArrayEntry->getRawValue());
+	}
+
+	/**
+	 * @test
+	 */
+	public function hashmapIsCorrectlyDecoded() {
+		$subject = new ExpressionValueFactory();
+		/** @var Object $expressionValue */
+		$expressionValue = $subject->createValueObject(simplexml_load_string('<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="property_get" transaction_id="pebugger-13.property_get.">
+				<property name="$array" fullname="$array" address="140330420476216" type="array" children="1" numchildren="2" page="0" pagesize="32">
+					<property name="foo" fullname="$array[foo]" address="140330420475312" type="string" size="11" encoding="base64"><![CDATA[bG9yZW0gaXBzdW0=]]></property>
+					<property name="bar" fullname="$array[bar]" address="140330420475448" type="string" size="0" encoding="base64"><![CDATA[]]></property>
+				</property>
+			</response>'));
+
+		$firstArrayEntry = $expressionValue->getProperty('foo');
+		$this->assertSame('lorem ipsum', $firstArrayEntry->getRawValue());
+
+		$secondArrayEntry = $expressionValue->getProperty('bar');
+		$this->assertSame('', $secondArrayEntry->getRawValue());
 	}
 
 }

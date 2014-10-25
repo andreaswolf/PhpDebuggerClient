@@ -6,7 +6,7 @@ namespace AndreasWolf\DebuggerClient\Protocol\Response;
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class Object extends ExpressionValue {
+class Object extends ContainerExpressionValue {
 
 	/**
 	 * The object class
@@ -15,39 +15,14 @@ class Object extends ExpressionValue {
 	 */
 	protected $class;
 
-	/**
-	 * The object properties, indexed by name.
-	 *
-	 * @var ExpressionValue[]
-	 */
-	protected $properties;
-
-
-	function __construct($properties) {
-		$this->properties = $properties;
-	}
 
 	/**
-	 * @return ExpressionValue[]
+	 * @param int $class
+	 * @param ExpressionValue[] $properties
 	 */
-	public function getProperties() {
-		return $this->properties;
-	}
-
-	/**
-	 * @param string $name
-	 * @return bool
-	 */
-	public function hasProperty($name) {
-		return array_key_exists($name, $this->properties);
-	}
-
-	/**
-	 * @param string $name
-	 * @return ExpressionValue
-	 */
-	public function getProperty($name) {
-		return $this->properties[$name];
+	function __construct($class, $properties) {
+		$this->class = $class;
+		parent::__construct($properties);
 	}
 
 }

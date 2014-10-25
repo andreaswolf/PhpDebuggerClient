@@ -15,6 +15,7 @@ class ExpressionValue {
 	const TYPE_INTEGER = 4;
 	const TYPE_FLOAT   = 5;
 	const TYPE_NULL    = 6;
+	const TYPE_ARRAY   = 7;
 
 	/**
 	 * The raw data value.

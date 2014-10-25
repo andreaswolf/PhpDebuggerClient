@@ -25,11 +25,21 @@ class ExpressionValueFactory {
 	 */
 	protected function createValueObjectForPropertyNode($node) {
 		$dataType = $this->getPropertyType($node);
-		$rawValue = $this->readSimplePropertyValue($dataType, $node);
 
 		if ($dataType == ExpressionValue::TYPE_OBJECT) {
-			return new Object($rawValue);
+			$attributes = $node->attributes;
+			$class = (string)$attributes['classname'];
+
+			$properties = $this->readObjectProperties($node);
+
+			return new Object($class, $properties);
+		} elseif ($dataType == ExpressionValue::TYPE_ARRAY) {
+			$properties = $this->readObjectProperties($node);
+
+			return new ArrayValue($properties);
 		} else {
+			$rawValue = $this->readSimplePropertyValue($dataType, $node);
+
 			return new ExpressionValue($dataType, $rawValue);
 		}
 	}
@@ -66,6 +76,10 @@ class ExpressionValueFactory {
 
 			case 'object':
 				$dataType = ExpressionValue::TYPE_OBJECT;
+				break;
+
+			case 'array':
+				$dataType = ExpressionValue::TYPE_ARRAY;
 				break;
 
 			default:
@@ -109,7 +123,8 @@ class ExpressionValueFactory {
 				break;
 
 			case ExpressionValue::TYPE_OBJECT:
-				$rawValue = $this->readObjectProperties($propertyNode);
+			case ExpressionValue::TYPE_ARRAY:
+				throw new \InvalidArgumentException('Objects and arrays don\'t contain simple values.');
 				break;
 
 			default:
@@ -121,7 +136,7 @@ class ExpressionValueFactory {
 
 	/**
 	 * @param \SimpleXMLElement $objectNode
-	 * @return ObjectProperty[]
+	 * @return ExpressionValue[]
 	 */
 	protected function readObjectProperties(\SimpleXMLElement $objectNode) {
 		$properties = array();
