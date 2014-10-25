@@ -98,7 +98,9 @@ class BreakpointCollection implements EventSubscriberInterface {
 	public function breakpointHitHandler(Event\BreakpointEvent $event) {
 		// continue execution; this handler is invoked with a very low priority, so everything else should be done by
 		// now
-		$this->session->run();
+		if ($this->session->isAutorunEnabled()) {
+			$this->session->run();
+		}
 	}
 
 

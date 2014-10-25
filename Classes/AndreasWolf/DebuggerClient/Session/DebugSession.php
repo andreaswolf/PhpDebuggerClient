@@ -154,6 +154,13 @@ class DebugSession implements EventSubscriberInterface {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function isAutorunEnabled() {
+		return $this->autorun === TRUE;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	public function isInitialized() {
