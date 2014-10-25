@@ -1,0 +1,12 @@
+language: php
+php:
+  - 5.5
+  - 5.4
+install:
+  - composer update
+script:
+  - phpunit -c Build/PhpUnit/UnitTests.xml
+  - phpunit -c Build/PhpUnit/FunctionalTests.xml
+notifications:
+  email:
+    - aw+travis@foundata.net
