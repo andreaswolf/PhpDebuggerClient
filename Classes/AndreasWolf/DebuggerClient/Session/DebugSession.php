@@ -108,6 +108,13 @@ class DebugSession {
 		$this->eventDispatcher = Bootstrap::getInstance()->getEventDispatcher();
 	}
 
+	/**
+	 * @param EventDispatcherInterface $eventDispatcher
+	 */
+	public function setEventDispatcher($eventDispatcher) {
+		$this->eventDispatcher = $eventDispatcher;
+	}
+
 	public function setMessageParser(DebuggerEngineMessageParser $messageParser) {
 		$this->messageParser = $messageParser;
 	}
