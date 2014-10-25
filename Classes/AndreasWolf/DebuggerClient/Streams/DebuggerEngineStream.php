@@ -63,7 +63,7 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 	protected function readData() {
 		$bytesToRead = 1500;
 		$data = $beginningOfNextPacket = '';
-		$packetLength = $dataLength = 0;
+		$nextPacketLength = 0;
 
 		$packets = $fragments = array();
 		$inPacket = FALSE;

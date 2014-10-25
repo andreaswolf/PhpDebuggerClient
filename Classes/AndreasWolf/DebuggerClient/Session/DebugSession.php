@@ -112,6 +112,13 @@ class DebugSession implements EventSubscriberInterface {
 		$this->eventDispatcher->addSubscriber($this);
 	}
 
+	/**
+	 * @param EventDispatcherInterface $eventDispatcher
+	 */
+	public function setEventDispatcher($eventDispatcher) {
+		$this->eventDispatcher = $eventDispatcher;
+	}
+
 	public function setMessageParser(DebuggerEngineMessageParser $messageParser) {
 		$this->messageParser = $messageParser;
 	}
