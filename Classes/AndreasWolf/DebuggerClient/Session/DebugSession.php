@@ -12,6 +12,7 @@ use AndreasWolf\DebuggerClient\Protocol\DebugSessionCommandProcessor;
 use AndreasWolf\DebuggerClient\Protocol\Response\EngineStatusResponse;
 use AndreasWolf\DebuggerClient\Session\Transaction;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  *
  * @author Andreas Wolf <aw@foundata.net>
  */
-class DebugSession {
+class DebugSession implements EventSubscriberInterface {
 
 	protected $initialized = FALSE;
 
@@ -103,9 +104,12 @@ class DebugSession {
 	 */
 	protected $breakpoints;
 
+	protected $autorun = TRUE;
+
 
 	public function __construct() {
 		$this->eventDispatcher = Bootstrap::getInstance()->getEventDispatcher();
+		$this->eventDispatcher->addSubscriber($this);
 	}
 
 	public function setMessageParser(DebuggerEngineMessageParser $messageParser) {
@@ -129,6 +133,17 @@ class DebugSession {
 	 */
 	public function getBreakpointCollection() {
 		return $this->breakpoints;
+	}
+
+	/**
+	 * Disables autorun for this session.
+	 *
+	 * If you do this, you have to call run() yourself when session initialization is finished.
+	 *
+	 * @return void
+	 */
+	public function disableAutorun() {
+		$this->autorun = FALSE;
 	}
 
 	/**
@@ -214,8 +229,18 @@ class DebugSession {
 		$this->initialized = TRUE;
 
 		$this->eventDispatcher->dispatch('session.initialized', new SessionEvent($this));
+	}
 
-		$this->run();
+	/**
+	 * Event handler run after the session has been initialized ()
+	 *
+	 * @param SessionEvent $event
+	 * @return void
+	 */
+	public function sessionInitializedHandler(SessionEvent $event) {
+		if ($this->autorun === TRUE) {
+			$this->run();
+		}
 	}
 
 	/**
@@ -261,5 +286,32 @@ class DebugSession {
 		$this->sendCommand($command);
 		$this->status = self::STATUS_RUNNING;
 	}
+
+	/**
+	 * Returns an array of event names this subscriber wants to listen to.
+	 *
+	 * The array keys are event names and the value can be:
+	 *
+	 *  * The method name to call (priority defaults to 0)
+	 *  * An array composed of the method name to call and the priority
+	 *  * An array of arrays composed of the method names to call and respective
+	 *    priorities, or 0 if unset
+	 *
+	 * For instance:
+	 *
+	 *  * array('eventName' => 'methodName')
+	 *  * array('eventName' => array('methodName', $priority))
+	 *  * array('eventName' => array(array('methodName1', $priority), array('methodName2'))
+	 *
+	 * @return array The event names to listen to
+	 *
+	 * @api
+	 */
+	public static function getSubscribedEvents() {
+		return array(
+			'session.initialized' => array('sessionInitializedHandler', -1000)
+		);
+	}
+
 
 }

@@ -73,51 +73,53 @@ class DebuggerEngineStream extends StreamWrapper implements StreamDataHandler {
 			$moreData = strlen($readBytes) == $bytesToRead;
 
 			$data .= $readBytes;
-			$fragments = explode("\0", $readBytes);
 
-			foreach ($fragments as $fragment) {
-				if (strlen(trim($fragment)) == '') {
-					// empty fragments happen e.g. at the end of a data packet, with the trailing zero byte
-					continue;
-				}
-
-				if ($inPacket === TRUE) {
-					if (strlen($fragment) === $nextPacketLength) {
-						// we received a full package
-						$packets[] = $fragment;
-						$beginningOfNextPacket = '';
-						$nextPacketLength = 0;
-						$inPacket = FALSE;
-					} else {
-						// only partial package
-						if ($beginningOfNextPacket == '') {
-							$beginningOfNextPacket = $fragment;
-						} else {
-							$beginningOfNextPacket .= $fragment;
-
-							if (strlen($beginningOfNextPacket) == $nextPacketLength) {
-								$packets[] = $beginningOfNextPacket;
-								$beginningOfNextPacket = '';
-								$nextPacketLength = 0;
-								$inPacket = FALSE;
-							} elseif (strlen($beginningOfNextPacket) > $nextPacketLength) {
-								// Error, we received too much data for one package
-								throw new \RuntimeException('Too much data: ' . strlen($beginningOfNextPacket) . ' vs ' . $nextPacketLength . " - " . $beginningOfNextPacket);
-							}
-						}
-					}
-				} else {
-					if (is_numeric($fragment)) {
-						$nextPacketLength = (int)$fragment;
-						$inPacket = TRUE;
-					} else {
-						// This should not happen…
-						throw new \RuntimeException('Oops. No segment length');
-					}
-				}
-			}
 			if (!$moreData) {
 				break;
+			}
+		}
+		$fragments = explode("\0", $data);
+
+		foreach ($fragments as $fragment) {
+			if (strlen(trim($fragment)) == '') {
+				// empty fragments happen e.g. at the end of a data packet, with the trailing zero byte
+				continue;
+			}
+
+			if ($inPacket === TRUE) {
+				if (strlen($fragment) === $nextPacketLength) {
+					// we received a full package
+					$packets[] = $fragment;
+					$beginningOfNextPacket = '';
+					$nextPacketLength = 0;
+					$inPacket = FALSE;
+				} else {
+					// only partial package
+					if ($beginningOfNextPacket == '') {
+						$beginningOfNextPacket = $fragment;
+					} else {
+						$fragment = $beginningOfNextPacket . $fragment;
+						$beginningOfNextPacket = '';
+
+						if (strlen($fragment) == $nextPacketLength) {
+							$packets[] = $fragment;
+							$nextPacketLength = 0;
+							$inPacket = FALSE;
+						} elseif (strlen($fragment) > $nextPacketLength) {
+							// Error, we received too much data for one package
+							throw new \RuntimeException('Too much data: ' . strlen($beginningOfNextPacket) . ' vs ' . $nextPacketLength . " - " . $beginningOfNextPacket);
+						}
+						// TODO it could be that we still need more data here; test this
+					}
+				}
+			} else {
+				if (is_numeric($fragment)) {
+					$nextPacketLength = (int)$fragment;
+					$inPacket = TRUE;
+				} else {
+					// This should not happen…
+					throw new \RuntimeException('Oops. No segment length; received: ' . $fragment);
+				}
 			}
 		}
 
