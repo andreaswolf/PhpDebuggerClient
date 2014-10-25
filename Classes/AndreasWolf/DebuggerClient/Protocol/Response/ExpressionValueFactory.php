@@ -20,14 +20,14 @@ class ExpressionValueFactory {
 	}
 
 	/**
-	 * @param $node
+	 * @param \SimpleXMLElement $node
 	 * @return ExpressionValue
 	 */
 	protected function createValueObjectForPropertyNode($node) {
 		$dataType = $this->getPropertyType($node);
 
 		if ($dataType == ExpressionValue::TYPE_OBJECT) {
-			$attributes = $node->attributes;
+			$attributes = $node->attributes();
 			$class = (string)$attributes['classname'];
 
 			$properties = $this->readObjectProperties($node);

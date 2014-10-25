@@ -239,6 +239,21 @@ class ExpressionValueFactoryTest extends UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function objectClassIsCorrectlyExtracted() {
+		$subject = new ExpressionValueFactory();
+		/** @var Object $expressionValue */
+		$expressionValue = $subject->createValueObject(simplexml_load_string('<?xml version="1.0" encoding="iso-8859-1"?>
+			<response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="eval" transaction_id="pebugger-16.property_get.">
+				<property address="140735948082816" type="object" classname="stdClass" children="0" numchildren="0" page="0" pagesize="32">
+				</property>
+			</response>'));
+
+		$this->assertEquals('stdClass', $expressionValue->getClass());
+	}
+
+	/**
+	 * @test
+	 */
 	public function arrayWithNumericKeyIsCorrectlyDecoded() {
 		$subject = new ExpressionValueFactory();
 		/** @var Object $expressionValue */

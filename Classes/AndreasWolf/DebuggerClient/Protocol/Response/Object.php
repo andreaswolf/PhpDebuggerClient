@@ -25,4 +25,11 @@ class Object extends ContainerExpressionValue {
 		parent::__construct($properties);
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getClass() {
+		return $this->class;
+	}
+
 }
