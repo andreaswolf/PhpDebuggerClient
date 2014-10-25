@@ -14,6 +14,8 @@ class DebuggerEngineStreamTest extends UnitTestCase {
 	 * @test
 	 */
 	public function shortMessageIsCorrectlyReadFromStream() {
+		$this->markTestSkipped('This needs to be refactored, see <https://github.com/andreaswolf/PhpDebuggerClient/issues/10>');
+
 		// The 500 bytes used here are about the size of e.g. a regular "init" message
 		$contents = $this->getRandomString(500);
 		$streamContents = "500\0$contents\0";
