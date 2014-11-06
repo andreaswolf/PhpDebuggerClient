@@ -55,4 +55,13 @@ class ExpressionValue {
 		return $this->rawValue;
 	}
 
+	/**
+	 * @param mixed $comparable
+	 * @return bool
+	 */
+	public function equalTo($comparable) {
+		// TODO check if we need an additional data type comparison
+		return $comparable === $this->rawValue;
+	}
+
 }
