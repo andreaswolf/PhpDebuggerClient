@@ -2,7 +2,9 @@
 namespace AndreasWolf\DebuggerClient\Core;
 use AndreasWolf\DebuggerClient\Core\Bootstrap;
 use AndreasWolf\DebuggerClient\Core\DebugSessionHandler;
+use AndreasWolf\DebuggerClient\Event\SessionEvent;
 use AndreasWolf\DebuggerClient\Event\StreamEvent;
+use AndreasWolf\DebuggerClient\Session\DebugSession;
 use AndreasWolf\DebuggerClient\Streams\StreamWatcher;
 use AndreasWolf\DebuggerClient\Proxy\ProxyListener;
 use AndreasWolf\DebuggerClient\Streams\ConnectionListener;
@@ -57,6 +59,19 @@ class Client implements EventDispatcherInterface {
 	protected $streamUriTemplate = 'tcp://%s:%s';
 
 	/**
+	 * If set, the current session will be the last
+	 * @var boolean
+	 */
+	protected $quitAfterCurrentSession = FALSE;
+
+	/**
+	 * "Interrupt" that, when set, will let the infinite loop in run() end.
+	 *
+	 * @var bool
+	 */
+	protected $quitSignal = FALSE;
+
+	/**
 	 * @var EventDispatcherInterface
 	 */
 	protected $eventDispatcher;
@@ -80,13 +95,38 @@ class Client implements EventDispatcherInterface {
 			$this->streamWatcher->attachStream($event->getStreamWrapper());
 		// high priority because we want to be sure that the stream is instantly watched
 		}, 1000);
+		$this->eventDispatcher->addListener('session.status.changed', array($this, 'sessionStatusChangeHandler'));
 
 		$debugSessionHandler = new DebugSessionHandler();
 
-		while (true) {
+		while ($this->quitSignal === FALSE) {
 			$this->debug("Watching streams for data");
 			$this->streamWatcher->watchAndNotifyActiveStreams();
 		}
+		//$this->debuggerListenStream->shutdown();
+	}
+
+	/**
+	 * Checks if the current session has ended and if we should interrupt event handling after that
+	 *
+	 * @param SessionEvent $event
+	 */
+	public function sessionStatusChangeHandler(SessionEvent $event) {
+		if ($event->getSession()->getStatus() !== DebugSession::STATUS_CLOSED) {
+			return;
+		}
+
+		if ($this->quitAfterCurrentSession) {
+			// set the "kill flag"; this lets the infinite loop in run() be not-so-infinite…
+			$this->quitSignal = TRUE;
+		}
+	}
+
+	/**
+	 * Lets the infinite session handling loop exit when the current session has ended.
+	 */
+	public function quitAfterCurrentSession() {
+		$this->quitAfterCurrentSession = TRUE;
 	}
 
 	protected function debug($data) {

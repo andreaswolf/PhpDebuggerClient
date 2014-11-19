@@ -60,10 +60,17 @@ class DebugSessionHandler implements EventSubscriberInterface {
 	}
 
 	/**
-	 * @param StreamEvent $e
+	 * @param SessionEvent $e
 	 */
-	public function connectionClosedEvent(StreamEvent $e) {
-		echo "Connection was closed\n";
+	public function sessionStatusChangeHandler(SessionEvent $e) {
+		if ($e->getSession() != $this->currentSession) {
+			// TODO this is an error
+			return;
+		}
+		if ($e->getSession()->getStatus() !== DebugSession::STATUS_CLOSED) {
+			return;
+		}
+
 		$this->currentSession->close();
 		$this->currentSession = NULL;
 	}
@@ -96,7 +103,7 @@ class DebugSessionHandler implements EventSubscriberInterface {
 	public static function getSubscribedEvents() {
 		return array(
 			'stream.connection.opened' => 'newConnectionEvent',
-			'stream.shutdown' => 'connectionClosedEvent',
+			'session.status.changed' => 'sessionStatusChangeHandler',
 		);
 	}
 
