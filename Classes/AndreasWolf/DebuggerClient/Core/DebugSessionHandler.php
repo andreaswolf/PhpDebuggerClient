@@ -63,7 +63,7 @@ class DebugSessionHandler implements EventSubscriberInterface {
 	 * @param StreamEvent $e
 	 */
 	public function connectionClosedEvent(StreamEvent $e) {
-		echo "Session was closed\n";
+		echo "Connection was closed\n";
 		$this->currentSession->close();
 		$this->currentSession = NULL;
 	}

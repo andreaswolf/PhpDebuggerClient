@@ -61,7 +61,6 @@ class DebugSession implements EventSubscriberInterface {
 	/** Program execution has ended; this is the point to e.g. collect statistics */
 	const STATUS_STOPPED = 4;
 	/** The session was closed, no further interaction with the debugger possible */
-	// TODO this status is currently never set
 	const STATUS_CLOSED = 5;
 
 	/**
@@ -189,28 +188,49 @@ class DebugSession implements EventSubscriberInterface {
 	 * @param EngineStatusResponse $engineResponse
 	 */
 	public function setStatusFromDebuggerEngine(EngineStatusResponse $engineResponse) {
-		$oldStatus = $this->status;
+		$status = NULL;
 		switch ($engineResponse->getStatus()) {
 			case EngineStatusResponse::STATUS_RUNNING:
-				$this->status = self::STATUS_RUNNING;
+				$status = self::STATUS_RUNNING;
 				break;
 
 			case EngineStatusResponse::STATUS_BREAK:
-				$this->status = self::STATUS_PAUSED;
+				$status = self::STATUS_PAUSED;
 				break;
 
 			case EngineStatusResponse::STATUS_STOPPING:
-				$this->status = self::STATUS_STOPPED;
+				$status = self::STATUS_STOPPED;
 				// TODO trigger event
 				break;
 		}
 
-		if ($oldStatus != $this->status) {
-			$this->eventDispatcher->dispatch('session.status.changed', new SessionEvent($this));
+		if ($status !== NULL) {
+			$this->updateStatus($status);
 		}
 		if ($engineResponse->hasFilename()) {
 			$this->lastKnownPosition = array($engineResponse->getFilename(), $engineResponse->getLineNumber());
 			$this->eventDispatcher->dispatch('session.file-position.updated', new SessionEvent($this));
+		}
+	}
+
+	/**
+	 * Updates this session’s status.
+	 *
+	 * Also triggers a change-event if the status has changed (i.e. it doesn’t harm to set the same status again)
+	 *
+	 * @param int $newStatus
+	 */
+	protected function updateStatus($newStatus) {
+		if ($newStatus == $this->status) {
+			return;
+		}
+		$this->status = $newStatus;
+		$this->eventDispatcher->dispatch('session.status.changed', new SessionEvent($this));
+
+		if ($this->status == self::STATUS_STOPPED) {
+			// properly close session after it was stopped; using two status gives the possibility to do proper cleanup,
+			// collect data etc. before the session and stream are finally discarded.
+			$this->updateStatus(self::STATUS_CLOSED);
 		}
 	}
 

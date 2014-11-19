@@ -44,7 +44,7 @@ class DebugSessionShutdownHandler implements EventSubscriberInterface {
 			return;
 		}
 
-		if ($this->session->getStatus() == DebugSession::STATUS_STOPPED) {
+		if ($this->session->getStatus() == DebugSession::STATUS_CLOSED) {
 			$this->stream->shutdown();
 		}
 	}
