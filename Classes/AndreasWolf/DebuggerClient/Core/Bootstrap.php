@@ -1,5 +1,6 @@
 <?php
 namespace AndreasWolf\DebuggerClient\Core;
+
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -35,10 +36,17 @@ class Bootstrap {
 	}
 
 	/**
-	 * @return \Symfony\Component\EventDispatcher\EventDispatcherInterface
+	 * @return EventDispatcherInterface
 	 */
 	public function getEventDispatcher() {
 		return $this->eventDispatcher;
+	}
+
+	/**
+	 * @param EventDispatcherInterface $dispatcher
+	 */
+	public function injectEventDispatcher(EventDispatcherInterface $dispatcher) {
+		$this->eventDispatcher = $dispatcher;
 	}
 
 	public function run() {
