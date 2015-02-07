@@ -55,4 +55,6 @@ interface Breakpoint {
 	 */
 	public function onHit(callable $callback);
 
+	public function __toString();
+
 }

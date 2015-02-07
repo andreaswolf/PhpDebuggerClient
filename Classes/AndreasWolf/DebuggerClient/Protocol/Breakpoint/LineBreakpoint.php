@@ -56,5 +56,9 @@ class LineBreakpoint extends BaseBreakpoint {
 		return $file == $this->file && $line == $this->line;
 	}
 
+	public function __toString() {
+		return $this->file . '[' . $this->line . ']';
+	}
+
 
 }
